@@ -72,7 +72,7 @@ namespace MyTesting
         {
             //create an instance of the class
             clsGames AGame = new clsGames();
-            //boolean variable to store the result of the validation 
+            //boolean variable to store the result of the VALIDATING 
             Boolean Found = false;
             //create some test data to use with the method
             Int32 Supplier_ID = 1;
