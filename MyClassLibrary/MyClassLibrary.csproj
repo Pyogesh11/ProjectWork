@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsAlphaGame.cs" />
+    <Compile Include="clsCustomer.cs" />
     <Compile Include="clsSupplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
