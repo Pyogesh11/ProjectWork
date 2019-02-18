@@ -12,7 +12,7 @@ namespace MyClassLibrary
 
         public bool Find(int supplier_ID)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
