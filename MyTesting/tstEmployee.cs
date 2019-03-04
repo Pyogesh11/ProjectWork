@@ -4,18 +4,18 @@ using MyClassLibrary;
 
 namespace MyTesting
 {
-    [TestClass]
-    
-    
-        public class NadimsTest
+        [TestClass]  
+        public class tstEmployee
+    {
+        //creating an instances of my class clsEmployee
+        [TestMethod]
+        public void InsttanceOK()
         {
-            //creating an instances of my class clsEmployee
-            public void InsttanceOK()
-            {
-                clsEmployee AnEmployee = new clsEmployee();
-                //testing to see that the object AnEmployee exists
-                Assert.IsNotNull(AnEmployee);
-            }
+            clsEmployee AnEmployee = new clsEmployee();
+            //testing to see that the object AnEmployee exists
+            Assert.IsNotNull(AnEmployee);
+        }
+
         [TestMethod]
         //creaing the porpiety EmployeeFirstName
         public void EmployeeFirstNameExist()
@@ -84,10 +84,11 @@ namespace MyTesting
             clsEmployee AnEmployee = new clsEmployee();
             // creating a boolean varbble to store the results of the validation
             Boolean Found = false;
+            Int32 EmployeeNo = 21;
             //craeting test data to test the method
             string EmployeeFirstName = "Nadim";
             //invoking the method
-            Found = AnEmployee.Find(EmployeeFirstName);
+            Found = AnEmployee.Find(EmployeeNo);
             Assert.IsTrue(Found);
             // !!!!!!! i have made it so that it always return true, this needs to be fizxed
             
@@ -115,47 +116,49 @@ namespace MyTesting
             Assert.IsTrue(OK);
         }
 
-        //[testmethod]
-        //public void testemployeefirstnamefound()
-        //{
-        //    clsemployee anemployee = new clsemployee();
-        //    //boolean varible to store the results of the serach
-        //    boolean found = false;
-        //    //boolean varible to record if data is ok (assume it is???)
-        //    boolean ok = true;
-        //    //creating test data to test all of it out
-        //    string employeefirstname = "max";
-        //    //invoke the method
-        //    found = anemployee.find(employeefirstname);
-        //    //check emplyeefirst name
-        //    if (anemployee.employeefirstname != "max") 
-        //    {
-        //        ok = false;
-        //    }
-        //    assert.istrue(ok);
+        [TestMethod]
+        public void testemployeefirstnamefound()
+        {
+            clsEmployee anemployee = new clsEmployee();
+            //boolean varible to store the results of the serach
+            Boolean found = false;
+            //boolean varible to record if data is ok (assume it is???)
+            Boolean ok = true;
+            Int32 EmployeeNo = 21;
+            //creating test data to test all of it out
+            //string employeefirstname = "max";
+            //invoke the method
+            found = anemployee.Find(EmployeeNo);
+            //check emplyeefirst name
+            if (anemployee.EmployeeFirstName != "Max")
+            {
+                ok = false;
+            }
+            Assert.IsTrue(ok);
 
-        //}
+        }
 
-        //[TestMethod]
-        //public void TestEmployeeSurNameFound()
-        //{
-        //    clsEmployee AnEmployee = new clsEmployee();
-        //    //boolean varible to store the results of the serach
-        //    Boolean Found = false;
-        //    //boolean varible to record if data is ok (assume it is???)
-        //    Boolean OK = true;
-        //    //creating test data to test all of it out
-        //    string EmployeeSurName = "Tokigawa";
-        //    //invoke the method
-        //    Found = AnEmployee.Find(EmployeeSurName);
-        //    //check emplyeefirst name
-        //    if (AnEmployee.EmployeeSurName != "Tokigawa")
-        //    {
-        //        OK = false;
-        //    }
-        //    Assert.IsTrue(OK);
+        [TestMethod]
+        public void TestEmployeeSurNameFound()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            //boolean varible to store the results of the serach
+            Boolean Found = false;
+            //boolean varible to record if data is ok (assume it is???)
+            Boolean OK = true;
+            Int32 EmployeeNo = 21;
+            //creating test data to test all of it out
+            //string EmployeeSurName = "Tokigawa";
+            //invoke the method
+            Found = AnEmployee.Find(EmployeeNo);
+            //check emplyeefirst name
+            if (AnEmployee.EmployeeSurName != "Tokigawa")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
 
-        //}
+        }
 
         [TestMethod]
 
@@ -166,10 +169,11 @@ namespace MyTesting
             Boolean Found = false;
             //boolean varible to record if data is ok (assume it is???)
             Boolean OK = true;
+            Int32 EmployeeNo = 21;
             //craeting test data to test all thsi out
             Int64 EmployeeContactNo = 07392738291;
             //invoking the method
-            Found = anEmployee.Find(EmployeeContactNo);
+            Found = anEmployee.Find(EmployeeNo);
             //check the employee contact no
             if (anEmployee.EmployeeContactNo != 07392738291)
             {
@@ -179,26 +183,27 @@ namespace MyTesting
             Assert.IsTrue(OK);
         }
 
-        //[TestMethod]
-        //public void TestEmployeeEmailFound()
-        //{
-        //    clsEmployee AnEmployee = new clsEmployee();
-        //    //boolean varible to store the results of the serach
-        //    Boolean Found = false;
-        //    //boolean varible to record if data is ok (assume it is???)
-        //    Boolean OK = true;
-        //    //creating test data to test all of it out
-        //    string EmployeeEmail = "Dingas@gmail.com";
-        //    //invoke the method
-        //    Found = AnEmployee.Find(EmployeeEmail);
-        //    //check emplye email
-        //    if (AnEmployee.EmployeeSurName != "Dingas@gmail.com")
-        //    {
-        //        OK = false;
-        //    }
-        //    Assert.IsTrue(OK);
+        [TestMethod]
+        public void TestEmployeeEmailFound()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            //boolean varible to store the results of the serach
+            Boolean Found = false;
+            //boolean varible to record if data is ok (assume it is???)
+            Boolean OK = true;
+            Int32 EmployeeNo = 21;
+            //creating test data to test all of it out
+            string EmployeeEmail = "Dingas@gmail.com";
+            //invoke the method
+            Found = AnEmployee.Find(EmployeeNo);
+            //check emplye email
+            if (AnEmployee.EmployeeEmail != "Dingas@gmail.com")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
 
-        //}
+        }
     }
 }
 

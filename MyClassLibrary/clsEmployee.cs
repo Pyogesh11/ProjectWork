@@ -99,30 +99,34 @@ namespace MyClassLibrary
             }
         }
 
-        public bool Find(string EmployeeFirstName)
-        {
+       // public bool Find(string EmployeeFirstName)
+       // {
             //SET THE PRIVATE DATA MEMBER TO TEST THE VALUE
-            mEmployeeFirstName = "MAX";
+       //     mEmployeeFirstName = "MAX";
             //ALWAYS RETURN TURE
-            return true;
-        }
+       //     return true;
+       // }
 
         public bool Find(int employeeNo)
         {
             //set the private data meber to test the data value
             mEmployeeNo = 21;
-            //always return tru
+            mEmployeeFirstName = "Max"; 
+            mEmployeeSurName = "Tokigawa";
+            mEmployeeContactNo = 07392738291;
+            mEmployeeEmail = "Dingas@gmail.com";
+            //always return true
             return true;
 
         }
 
-        public bool Find(long employeeContactNo)
-        {
-            //set the private data member to test the data value
-            mEmployeeContactNo = 07392738291;
+       // public bool Find(long employeeContactNo)
+      //  {
+       //     //set the private data member to test the data value
+       //     mEmployeeContactNo = 07392738291;
             //always retrun true
-            return true; 
-        }
+       //     return true; 
+      //  }
 
        
 
