@@ -28,8 +28,9 @@ namespace Mytesting
             //test to see that the two values are the same 
             Assert.AreEqual(ACustomer.Active, TestData);
         }
+
         [TestMethod]
-        public void CustomerIDOK()
+        public void CustomerIDPropertyOK()
         {
             //create an instance of the class we want to create 
             clsCustomer ACustomer = new clsCustomer();
@@ -42,7 +43,118 @@ namespace Mytesting
             //test to see that the result is correct 
             Assert.IsTrue(Found);
         }
+        [TestMethod]
+        public void CountyNoPropertyOK()
+        {
+            //create an instance of the class we want to create 
+            clsCustomer ACustomer = new clsCustomer();
+            //create some test data to assign to the property 
+            Int32 TestData = 1;
+            //assign the data to the property 
+            ACustomer.CountyNo = TestData;
+            //test to see that the two values are the same 
+            Assert.AreEqual(ACustomer.CountyNo, TestData);
+        }
 
+        [TestMethod]
+        public void HouseNoPropertyOK()
+        {
+            //create an instance of the class we want to create 
+            clsCustomer ACustomer = new clsCustomer();
+            //create some test data to assign to the property 
+            string TestData = "21b";
+            //assign the data to the property 
+            ACustomer.HouseNo = TestData;
+            //test to see that the two values are the same 
+            Assert.AreEqual(ACustomer.HouseNo, TestData);
+        }
 
+        [TestMethod]
+        public void PhoneNoPropertyOK()
+        {
+            //create an instance of the class we want to create 
+            clsCustomer ACustomer = new clsCustomer();
+            //create some test data to assign to the property 
+            Int32 TestData = 122222784;
+            //assign the data to the property 
+            ACustomer.PhoneNo = TestData;
+            //test to see that two values are the same 
+            Assert.AreEqual(ACustomer.PhoneNo, TestData);
+        }
+        [TestMethod]
+        public void PostCodePropertyOK()
+        {
+            //create an instance of the class we want to create 
+            clsCustomer ACustomer = new clsCustomer();
+            //create some test data to assign to the property 
+            string TestData = "LE5 75L";
+            //assign the data to the property 
+            ACustomer.PostCode = TestData;
+            //test to see that the twoe values are the same 
+            Assert.AreEqual(ACustomer.PostCode, TestData);
+        }
+        [TestMethod]
+        public void StreetPropertyOK()
+        {
+            //create an instance of the clss we want to create 
+            clsCustomer ACustomer = new clsCustomer();
+            //create some test data to assign to the property 
+            string TestData = "Prince Street";
+            //assign the data to the property 
+            ACustomer.Street = TestData;
+            //test to see that the two values are the same 
+            Assert.AreEqual(ACustomer.Street, TestData);
+        }
+        [TestMethod]
+        public void FirstNamePropertyOk()
+        {
+            //create an instance of the class we want to create 
+            clsCustomer ACustomer = new clsCustomer();
+            //create some test data to assign to the property 
+            string TestData = "Simon";
+            //assign the data to the property 
+            ACustomer.FirstName = TestData;
+            //test to see that two values are the same 
+            Assert.AreEqual(ACustomer.FirstName, TestData);
+        }
+        [TestMethod]
+        public void SurNamePropertyOk()
+        {
+            //create an instance of the class we want to create 
+            clsCustomer ACustomer = new clsCustomer();
+            //create some test data to assign to the property 
+            string TestData = "Bread";
+            //assign the data to the property 
+            ACustomer.SurName = TestData;
+            //test to see that two values are the same 
+            Assert.AreEqual(ACustomer.SurName, TestData);
+        }
+        [TestMethod]
+        public void EmailPropertyOk()
+        {
+            //create an instance of the class we want to create 
+            clsCustomer ACustomer = new clsCustomer();
+            //create some test data to assign to the property 
+            string TestData = "Simon15@gmail.com";
+            //assign the data to the property 
+            ACustomer.Email = TestData;
+            //test to see that two values are the same 
+            Assert.AreEqual(ACustomer.Email, TestData);
+        }
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create 
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation 
+            Boolean Found = false;
+            //create some test data to use with the method 
+            Int32 HouseNo = 1;
+            //invoke the method 
+            Found = ACustomer.Find(HouseNo);
+            //test to see that the result is correct 
+            Assert.IsTrue(Found);
+        }
     }
 }
+
