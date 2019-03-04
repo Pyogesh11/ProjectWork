@@ -35,7 +35,7 @@ namespace MyTesting
             AConsole.DateAdded = TestData;
             Assert.AreEqual(AConsole.DateAdded, TestData);
         }
-
+        [TestMethod]
         public void ConsolePropertyOK()
         {   //instance of class
             clsConsole AConsole = new clsConsole();
@@ -46,6 +46,7 @@ namespace MyTesting
             //test to see if they ae the same
             Assert.AreEqual(AConsole.Console, TestData);
         }
+        [TestMethod]
         public void ManufacturerPopertyOK()
         {   //instance of class
             clsConsole AConsole = new clsConsole();
@@ -56,6 +57,7 @@ namespace MyTesting
             //test to see if they ae the same
             Assert.AreEqual(AConsole.Manufacturer, TestData);
         }
+        [TestMethod]
         public void PricePropertyOK()
         {   //instance of class
             clsConsole AConsole = new clsConsole();
@@ -66,6 +68,7 @@ namespace MyTesting
             //test to see if they ae the same
             Assert.AreEqual(AConsole.Price, TestData);
         }
+        [TestMethod]
         public void StockQuantityPropertyOK()
         {   //instance of class
             clsConsole AConsole = new clsConsole();
@@ -75,6 +78,15 @@ namespace MyTesting
             AConsole.Stock = TestData;
             //test to see if they ae the same
             Assert.AreEqual(AConsole.Stock, TestData);
+        }
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            String Manufacturer = "Xbox";
+            Error = AConsole.Valid(Manufacturer);
+            Assert.AreEqual(Error, "");
         }
     }
 }
