@@ -75,9 +75,9 @@ namespace MyTesting
             //boolean variable to store the result of the VALIDATING 
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 Supplier_ID = 1;
+            Int32 Game_ID = 21;
             //invoke the method
-            Found = AGame.Find(Supplier_ID);
+            Found = AGame.Find(Game_ID);
             //test to see that the result is correct
             Assert.IsTrue(Found);
 
@@ -88,6 +88,132 @@ namespace MyTesting
             return true;
         }
 
+
+
+        [TestMethod]
+        public void TestGame_IDFound()
+        {
+            //create an instance of the class we want to create
+            clsGames AGame = new clsGames();
+            //boolean variable to store result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is okay
+            Boolean OK = true;
+            // create some test data to use with the method 
+            Int32 Game_ID = 21;
+            //invoke the method 
+            Found = AGame.Find(Game_ID);
+            //check the game ID        
+            if (AGame.Game_ID != 21)
+            {
+                OK = false;
+            }
+            //test to see that the results is correct 
+            Assert.IsTrue(OK);
+        }
+
+
+        [TestMethod]
+        public void TestSupplier_IDFound()
+        {
+            //create an instance of the class we want to create
+            clsGames AGame = new clsGames();
+            //boolean variable to store result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is okay
+            Boolean OK = true;
+            // create some test data to use with the method 
+            Int32 Game_ID = 21;
+            //invoke the method 
+            Found = AGame.Find(Game_ID);
+            //check the game ID        
+            if (AGame.Supplier_ID != 1)
+            {
+                OK = false;
+            }
+            //test to see that the results is correct 
+            Assert.IsTrue(OK);
+        }
+        public void TestGame_NameFound()
+        {
+            //create an instance of the class we want to create
+            clsGames AGame = new clsGames();
+            //boolean variable to store result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is okay
+            Boolean OK = true;
+            // create some test data to use with the method 
+            Int32 Game_ID = 21;
+            //invoke the method 
+            Found = AGame.Find(Game_ID);
+            //check the game ID        
+            if (AGame.Game_Name != "Test Game")
+            {
+                OK = false;
+            }
+            //test to see that the results is correct 
+            Assert.IsTrue(OK);
+        }
+        public void TestGame_DecriptionFound()
+        {
+            //create an instance of the class we want to create
+            clsGames AGame = new clsGames();
+            //boolean variable to store result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is okay
+            Boolean OK = true;
+            // create some test data to use with the method 
+            Int32 Game_ID = 21;
+            //invoke the method 
+            Found = AGame.Find(Game_ID);
+            //check the game ID        
+            if (AGame.Game_Description != "Test description for this property")
+            {
+                OK = false;
+            }
+            //test to see that the results is correct 
+            Assert.IsTrue(OK);
+        }
+        public void TestGame_QuantityFound()
+        {
+            //create an instance of the class we want to create
+            clsGames AGame = new clsGames();
+            //boolean variable to store result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is okay
+            Boolean OK = true;
+            // create some test data to use with the method 
+            Int32 Game_ID = 21;
+            //invoke the method 
+            Found = AGame.Find(Game_ID);
+            //check the game ID        
+            if (AGame.Game_Quantity != 10)
+            {
+                OK = false;
+            }
+            //test to see that the results is correct 
+            Assert.IsTrue(OK);
+        }
+        public void TestPlatformFound()
+        {
+            //create an instance of the class we want to create
+            clsGames AGame = new clsGames();
+            //boolean variable to store result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is okay
+            Boolean OK = true;
+            // create some test data to use with the method 
+            Int32 Game_ID = 21;
+            //invoke the method 
+            Found = AGame.Find(Game_ID);
+            //check the game ID        
+            if (AGame.Platform != "PlayStation4")
+            {
+                OK = false;
+            }
+            //test to see that the results is correct 
+            Assert.IsTrue(OK);
+        }
 
     }
 }
