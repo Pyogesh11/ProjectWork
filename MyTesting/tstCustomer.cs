@@ -184,11 +184,11 @@ namespace Mytesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some testdata to use with the method 
-            Int32 HouseNo = 1;
+            Int32 CustomerNo = 1;
             //invoke the method 
             Found = ACustomer.Find(CustomerNo);
             //check the house no 
-            if (ACustomer.HouseNo != 1)
+            if (ACustomer.HouseNo != "1")
             {
                 OK = false;
             }
