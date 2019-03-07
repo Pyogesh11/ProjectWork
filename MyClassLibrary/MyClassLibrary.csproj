@@ -42,11 +42,11 @@
   <ItemGroup>
     <Compile Include="clsAlphaGame.cs" />
     <Compile Include="clsCustomer.cs" />
+    <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsEmployee.cs" />
     <Compile Include="clsGames.cs" />
     <Compile Include="clsSupplier.cs" />
     <Compile Include="clsConsole.cs" />
-    <Compile Include="DataConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
