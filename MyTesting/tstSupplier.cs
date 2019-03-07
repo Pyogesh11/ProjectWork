@@ -93,14 +93,30 @@ namespace MyTesting
             //create an instance of the class we want
             clsSupplier ASupplier = new clsSupplier();
             //create some test data to assign to the property
-            string TestData = "07112123346";
+            string TestData = "07331415589";
             //assign the data to the property
             ASupplier.Supplier_Phone_No = TestData;
             //test to see if its exist
             Assert.AreEqual(ASupplier.Supplier_Phone_No, TestData);
         }
 
+        //Active
+        [TestMethod]
+        public void ActivePropertyOK()
+        {
+            //create an instance of the class we want
+            clsSupplier ASupplier = new clsSupplier();
+            //create some test data to assign to the property
+            Boolean TestData = true;
+            //assign the data to the property
+            ASupplier.Active = TestData;
+            //test to see if its exist
+            Assert.AreEqual(ASupplier.Active, TestData);
+        }
 
+        /// <summary>
+        /// ///////////////////////////////////////////////////Creating method////////////////////////////////////////////////////////////////////
+        /// </summary>
         //creating method 
         [TestMethod]
         public void FindMethodOK()
@@ -248,6 +264,29 @@ namespace MyTesting
             Found = ASupplier.Find(Supplier_Id);
             //check the supplier id 
             if (ASupplier.Supplier_Phone_No != "07331415589")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        //Active
+        [TestMethod]
+        public void TestActiveFound()
+        {
+            //create an instance of the class we want
+            clsSupplier ASupplier = new clsSupplier();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method 
+            Int32 Supplier_Id = 002;
+            //invoke the method 
+            Found = ASupplier.Find(Supplier_Id);
+            //check the supplier id 
+            if (ASupplier.Active != true)
             {
                 OK = false;
             }
