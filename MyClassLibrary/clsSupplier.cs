@@ -6,11 +6,18 @@ namespace MyClassLibrary
     {
         //private data member for the Supplier_Id property
         private Int32 mSupplier_Id;
+        //private data member for the Supplier_Id property
         private string mSupplier_Address;
+        //private data member for the Supplier_Id property
         private string mSupplier_County;
+        //private data member for the Supplier_Id property
         private string mSupplier_Email;
+        //private data member for the Supplier_Id property
         private string mSupplier_Name;
+        //private data member for the Supplier_Id property
         private String mSupplier_Phone_No;
+        //private data member for the Supplier_Id property
+        private Boolean mActive;
 
         public string Supplier_Address
         {
@@ -73,7 +80,7 @@ namespace MyClassLibrary
             }
         }
 
-
+        //Public property for Supplier_Name
         public string Supplier_Name
         {
             get
@@ -88,7 +95,7 @@ namespace MyClassLibrary
             }
         }
 
-
+        //Public property for Supplier_Phone_No
         public string Supplier_Phone_No
         {
             get
@@ -103,6 +110,22 @@ namespace MyClassLibrary
             }
         }
 
+        //Public property for active
+        public bool Active
+        {
+            get
+            {
+                //return the private data
+                return mActive;
+            }
+
+            set
+            {
+                //set the private data
+                mActive = value;
+            }
+        }
+
         public bool Find(int supplier_Id)
         {
             //set the private data member to the test data value
@@ -112,6 +135,7 @@ namespace MyClassLibrary
             mSupplier_Email = "Supplier_Email@gmail.com";
             mSupplier_Name = "Test Supplier Name";
             mSupplier_Phone_No = "07331415589";
+            mActive = true;
             //always return true
             return true;
         }
