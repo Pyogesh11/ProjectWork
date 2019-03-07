@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyClassLibrary;
 
-namespace Mytesting
+namespace MyTesting
 {
     [TestClass]
     public class tstCustomer
@@ -16,18 +16,18 @@ namespace Mytesting
             Assert.IsNotNull(ACustomer);
         }
 
-     // [TestMethod]
-      //public void ActivePropertyOK()
-      //{
+        [TestMethod]
+        public void GenderPropertyOK()
+        {
             //create an instance of the class we want to create 
-      //    clsCustomer ACustomer = new clsCustomer();
-      //    //create some test data to assign to the property 
-       //   Boolean TestData = true; 
+            clsCustomer ACustomer = new clsCustomer();
+            //create some test data to assign to the property 
+            Boolean TestData = true;
             //assign the data to the property 
-       //   ACustomer.Active = TestData;
-       //   //test to see that the two values are the same 
-       //   Assert.AreEqual(ACustomer.Active, TestData);
-      //}
+            ACustomer.Gender = TestData;
+            //test to see that the two values are the same 
+            Assert.AreEqual(ACustomer.Gender, TestData);
+        }
         [TestMethod]
         public void CountyNoPropertyOK()
         {
@@ -53,7 +53,6 @@ namespace Mytesting
             //test to see that the two values are the same 
             Assert.AreEqual(ACustomer.HouseNo, TestData);
         }
-
         [TestMethod]
         public void PhoneNoPropertyOK()
         {
@@ -115,18 +114,6 @@ namespace Mytesting
             Assert.AreEqual(ACustomer.SurName, TestData);
         }
         [TestMethod]
-        public void GenderPropertyOK()
-        {
-            //create an instance of the class we want to create 
-            clsCustomer ACustomer = new clsCustomer();
-            //create some test data to assign to the property 
-            string TestData = "Male";
-            //assign the data to the property 
-            ACustomer.Gender = TestData;
-            //test to see that two values are the same 
-            Assert.AreEqual(ACustomer.Gender, TestData);
-        }
-        [TestMethod]
         public void EmailPropertyOk()
         {
             //create an instance of the class we want to create 
@@ -148,7 +135,7 @@ namespace Mytesting
             //create some test data to use with the method 
             Int32 CustomerID = 1;
             //invoke the method 
-            Found = ACustomer.Find( CustomerID);
+            Found = ACustomer.Find(CustomerID);
             //test to see that the result is correct 
             Assert.IsTrue(Found);
         }
@@ -163,11 +150,11 @@ namespace Mytesting
             //bbolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some tesr data to use with the method
-            Int32 CustomerNo = 1;
+            Int32 CustomerID = 1;
             //invoke the method 
-            Found = ACustomer.Find(CustomerNo);
+            Found = ACustomer.Find(CustomerID);
             //check the house no 
-            if (ACustomer.HouseNo != "1")
+            if (ACustomer.CustomerID != 1)
             {
                 OK = false;
             }
@@ -184,11 +171,180 @@ namespace Mytesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some testdata to use with the method 
-            Int32 CustomerNo = 1;
+            Int32 CustomerID = 1;
             //invoke the method 
-            Found = ACustomer.Find(CustomerNo);
+            Found = ACustomer.Find(CustomerID);
             //check the house no 
             if (ACustomer.HouseNo != "1")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct 
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestStreetFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some testdata to use with the method 
+            Int32 CustomerID = 1;
+            //invoke the method 
+            Found = ACustomer.Find(CustomerID);
+            //check the house no 
+            if (ACustomer.Street != "Prince Street")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct 
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestCountyNoFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some testdata to use with the method 
+            Int32 CustomerID = 1;
+            //invoke the method 
+            Found = ACustomer.Find(CustomerID);
+            //check the house no 
+            if (ACustomer.CountyNo != 1)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct 
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestEmailFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some testdata to use with the method 
+            Int32 CustomerID = 1;
+            //invoke the method 
+            Found = ACustomer.Find(CustomerID);
+            //check the house no 
+            if (ACustomer.Email != "Simon15@gmail.com")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct 
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestFirstNameFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some testdata to use with the method 
+            Int32 CustomerID = 1;
+            //invoke the method 
+            Found = ACustomer.Find(CustomerID);
+            //check the house no 
+            if (ACustomer.FirstName != "Simon")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct 
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestSurNameFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some testdata to use with the method 
+            Int32 CustomerID = 1;
+            //invoke the method 
+            Found = ACustomer.Find(CustomerID);
+            //check the house no 
+            if (ACustomer.SurName != "Bread")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct 
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestPostCodeFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some testdata to use with the method 
+            Int32 CustomerID = 1;
+            //invoke the method 
+            Found = ACustomer.Find(CustomerID);
+            //check the house no 
+            if (ACustomer.PostCode != "LE5 75L")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct 
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestPhoneNoFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some testdata to use with the method 
+            Int32 CustomerID = 1;
+            //invoke the method 
+            Found = ACustomer.Find(CustomerID);
+            //check the house no 
+            if (ACustomer.PhoneNo != 122222784)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct 
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestGenderFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the search 
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some testdata to use with the method 
+            Int32 CustomerID = 1;
+            //invoke the method 
+            Found = ACustomer.Find(CustomerID);
+            //check the house no 
+            if (ACustomer.Gender != true)
             {
                 OK = false;
             }
