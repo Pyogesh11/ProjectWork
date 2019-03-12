@@ -43,11 +43,11 @@ namespace MyClassLibrary
             get
             {
                 //return the private data
-                return mConsole;
+                return mConsoleManufacturer;
             }
             set
             {
-                mConsole = value;
+                mConsoleManufacturer = value;
             }
         }
         public int Price
@@ -74,7 +74,18 @@ namespace MyClassLibrary
                 mConsoleStock = value;
             }
         }
-
+        public string Name
+        {
+            get
+            {
+                //return the private data
+                return mConsoleName;
+            }
+            set
+            {
+                mConsoleName = value;
+            }
+        }
         public bool Find(int ConsoleNo)
         {
             clsDataConnection DB = new clsDataConnection();
