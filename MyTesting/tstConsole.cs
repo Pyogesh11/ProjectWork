@@ -7,6 +7,11 @@ namespace MyTesting
     [TestClass]
     public class tstConsole
     {
+        string ConsoleName = "Xbox";
+        string ConsoleManufacturer = "Microsoft";
+        string ConsolePrice = "250";
+        string ConsoleStock = "10000";
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -14,27 +19,8 @@ namespace MyTesting
             Assert.IsNotNull(AConsole);
         }
 
-        [TestMethod]
-        public void ActivePropertyOK()
-        {
-            //instance of class we will create
-            clsConsole AConsole = new clsConsole();
-            //test data to assign to the property
-            Boolean TestData = true;
-            AConsole.Active = TestData;
-            Assert.AreEqual(AConsole.Active, TestData);
-        }
-
-        [TestMethod]
-        public void DateAddedPropertyOK()
-        {
-            clsConsole AConsole = new clsConsole();
-            //test data to assign to the property
-            DateTime TestData = DateTime.Now.Date;
-            //assigns data to property
-            AConsole.DateAdded = TestData;
-            Assert.AreEqual(AConsole.DateAdded, TestData);
-        }
+        
+      
         [TestMethod]
         public void ConsolePropertyOK()
         {   //instance of class
@@ -84,9 +70,37 @@ namespace MyTesting
         {
             clsConsole AConsole = new clsConsole();
             String Error = "";
-            String Manufacturer = "Xbox";
-            Error = AConsole.Valid(Manufacturer);
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock);
             Assert.AreEqual(Error, "");
         }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            clsConsole AConsole = new clsConsole();
+            //boolean to store result of search
+            Boolean Found = false;
+            Int32 ConsoleNo = 2;
+            Found = AConsole.Find(ConsoleNo);
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestConsoleNo()
+        {
+            clsConsole AConsole = new clsConsole();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ConsoleNo = 2;
+            Found = AConsole.Find(ConsoleNo);
+            if (AConsole.ConsoleNo != 2)
+            {
+                OK = false;
+
+            }
+            Assert.IsTrue(OK);
+        }
+       
+
     }
 }

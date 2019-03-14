@@ -5,34 +5,15 @@ namespace MyClassLibrary
     public class clsConsole
     {
         private string mConsole;
-        private string mManufacturer;
-        private Int32 mStock;
-        private DateTime mDateAdded;
-        private Int32 mPrice;
-        private Boolean mActive;
-        public bool Active
-        {
-            get
-            {
-                //return the private data
-                return mActive;
-            }
-            set
-            {
-                mActive = value;
-            }
-        }
-        public DateTime DateAdded {
-            get
-            {
-                //return the private data
-                return mDateAdded;
-            }
-            set
-            {
-                mDateAdded = value;
-            }
-        }
+        private string mConsoleManufacturer;
+        private Int32 mConsoleStock;
+        private Int32 mConsolePrice;
+        private Int32 mConsoleNo;
+        private string mConsoleName;
+       
+        
+
+        
         public string Console
         {
             get
@@ -45,16 +26,28 @@ namespace MyClassLibrary
                 mConsole = value;
             }
         }
+        public int ConsoleNo
+        {
+            get
+            {
+                //return the private data
+                return mConsoleNo;
+            }
+            set
+            {
+                mConsoleNo = value;
+            }
+        }
         public string Manufacturer
         {
             get
             {
                 //return the private data
-                return mConsole;
+                return mConsoleManufacturer;
             }
             set
             {
-                mConsole = value;
+                mConsoleManufacturer = value;
             }
         }
         public int Price
@@ -62,11 +55,11 @@ namespace MyClassLibrary
             get
             {
                 //return the private data
-                return mPrice;
+                return mConsolePrice;
             }
             set
             {
-                mPrice = value;
+                mConsolePrice = value;
             }
         }
         public int Stock
@@ -74,36 +67,49 @@ namespace MyClassLibrary
             get
             {
                 //return the private data
-                return mStock;
+                return mConsoleStock;
             }
             set
             {
-                mStock = value;
+                mConsoleStock = value;
             }
         }
-
-        public bool Find(int Console)
+        public string Name
         {
-            mManufacturer = "Microsoft";
-            mConsole = "Xbox One";
-            mPrice = 250;
-            mStock = 25000;
-            mDateAdded = Convert.ToDateTime("01/01/2017");
-            mActive = true;
-            //always returns true
-            return true;
-        }
-
-        public string Valid(string manufacturer)
-        {
-            if (Manufacturer != "")
+            get
             {
-                return "";
+                //return the private data
+                return mConsoleName;
+            }
+            set
+            {
+                mConsoleName = value;
+            }
+        }
+        public bool Find(int ConsoleNo)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@ConsoleNo", ConsoleNo);
+            DB.Execute("sproc_tblConsole_FilterByConsole_Manufacturer");
+            if (DB.Count == 1)
+            {
+                mConsoleNo = Convert.ToInt32(DB.DataTable.Rows[0]["ConsoleNo"]);
+                mConsoleName = Convert.ToString(DB.DataTable.Rows[0]["ConsoleName"]);
+                mConsolePrice = Convert.ToInt32(DB.DataTable.Rows[0]["ConsolePrice"]);
+                mConsoleStock = Convert.ToInt32(DB.DataTable.Rows[0]["ConsoleStock"]);
+                mConsoleManufacturer = Convert.ToString(DB.DataTable.Rows[0]["ConsoleManufacturer"]);
+                return true;
             }
             else
             {
-                return "This must not be blank";
+                return false;
             }
+           
+        }
+
+        public string Valid(string ConsoleName, string ConsolePrice, string ConsoleStock, string ConsoleManufacturer)
+        {
+            return "";
         }
     }
 }
