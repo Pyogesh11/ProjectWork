@@ -30,18 +30,18 @@ namespace MyTesting
             Assert.AreEqual(ASupplier.Supplier_Address, TestData);
         }
 
-        //Supplier_County
+        //CountyNo
         [TestMethod]
-        public void Supplier_CountyPropertyOK()
+        public void CountyNoPropertyOK()
         {
             //create an instance of the class we want
             clsSupplier ASupplier = new clsSupplier();
             //create some test data to assign to the property
-            String TestData = "Leicester";
+            Int32 TestData = 1;
             //assign the data to the property
-            ASupplier.Supplier_County = TestData;
+            ASupplier.CountyNo = TestData;
             //test to see if its exist
-            Assert.AreEqual(ASupplier.Supplier_County, TestData);
+            Assert.AreEqual(ASupplier.CountyNo, TestData);
         }
         
         //Supplier_Email
@@ -126,7 +126,7 @@ namespace MyTesting
             //boolean variable to store the result of the validation 
             Boolean Found = false;
             //create some test data to use with the method 
-            Int32 Supplier_Id = 001;
+            Int32 Supplier_Id = 4;
             //invoke the method 
             Found = ASupplier.Find(Supplier_Id);
             //test to see that the result is correct
@@ -144,11 +144,11 @@ namespace MyTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method 
-            Int32 Supplier_Id = 002;
+            Int32 Supplier_Id = 004;
             //invoke the method 
             Found = ASupplier.Find(Supplier_Id);
             //check the supplier id 
-            if (ASupplier.Supplier_Id != 002)
+            if (ASupplier.Supplier_Id != 004)
             {
                 OK = false;
             }
@@ -167,7 +167,7 @@ namespace MyTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method 
-            Int32 Supplier_Id = 002;
+            Int32 Supplier_Id = 004;
             //invoke the method 
             Found = ASupplier.Find(Supplier_Id);
             //check the supplier id 
@@ -181,7 +181,7 @@ namespace MyTesting
 
         //Supplier_County method
         [TestMethod]
-        public void TestSupplier_CountyFound()
+        public void TestCountyNoFound()
         {
             //create an instance of the class we want
             clsSupplier ASupplier = new clsSupplier();
@@ -190,11 +190,11 @@ namespace MyTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method 
-            Int32 Supplier_Id = 002;
+            Int32 Supplier_Id = 004;
             //invoke the method 
             Found = ASupplier.Find(Supplier_Id);
             //check the supplier id 
-            if (ASupplier.Supplier_County != "Test County")
+            if (ASupplier.CountyNo != 1)
             {
                 OK = false;
             }
@@ -213,7 +213,7 @@ namespace MyTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method 
-            Int32 Supplier_Id = 002;
+            Int32 Supplier_Id = 004;
             //invoke the method 
             Found = ASupplier.Find(Supplier_Id);
             //check the supplier id 
@@ -236,7 +236,7 @@ namespace MyTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method 
-            Int32 Supplier_Id = 002;
+            Int32 Supplier_Id = 004;
             //invoke the method 
             Found = ASupplier.Find(Supplier_Id);
             //check the supplier id 
@@ -259,7 +259,7 @@ namespace MyTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method 
-            Int32 Supplier_Id = 002;
+            Int32 Supplier_Id = 004;
             //invoke the method 
             Found = ASupplier.Find(Supplier_Id);
             //check the supplier id 
@@ -282,7 +282,7 @@ namespace MyTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method 
-            Int32 Supplier_Id = 002;
+            Int32 Supplier_Id = 004;
             //invoke the method 
             Found = ASupplier.Find(Supplier_Id);
             //check the supplier id 
