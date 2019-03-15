@@ -9,7 +9,8 @@ namespace MyClassLibrary
         private string mEmployeeFirstName;
         private string mEmployeeSurName;
         private string mEmployeeEmail;
-        private Int64 mEmployeeContactNo;
+        private string mEmployeeContactNo;
+        
 
         public clsEmployee()
         {
@@ -49,22 +50,8 @@ namespace MyClassLibrary
 
             }
         }
-        //get and set for employee contact No
-        public long EmployeeContactNo
-        {
-            get
-            {
-                //return the private data
-                return mEmployeeContactNo;
-            }
-
-            set
-            {
-                //set the value of the private data number
-                mEmployeeContactNo = value;
-
-            }
-        }
+   
+      
 
         //get and set for emolyee email
         public string EmployeeEmail
@@ -99,13 +86,19 @@ namespace MyClassLibrary
             }
         }
 
-       // public bool Find(string EmployeeFirstName)
-       // {
-            //SET THE PRIVATE DATA MEMBER TO TEST THE VALUE
-       //     mEmployeeFirstName = "MAX";
-            //ALWAYS RETURN TURE
-       //     return true;
-       // }
+        public string EmployeeContactNo
+        { get
+            {
+                return mEmployeeContactNo;
+            }
+            set
+            {
+                mEmployeeContactNo = value;
+            }
+            
+
+            
+        }
 
         public bool Find(int employeeNo)
         {
@@ -113,20 +106,14 @@ namespace MyClassLibrary
             mEmployeeNo = 21;
             mEmployeeFirstName = "Max"; 
             mEmployeeSurName = "Tokigawa";
-            mEmployeeContactNo = 07392738291;
+            mEmployeeContactNo = "07392738291";
             mEmployeeEmail = "Dingas@gmail.com";
             //always return true
             return true;
 
         }
 
-       // public bool Find(long employeeContactNo)
-      //  {
-       //     //set the private data member to test the data value
-       //     mEmployeeContactNo = 07392738291;
-            //always retrun true
-       //     return true; 
-      //  }
+    
 
        
 
