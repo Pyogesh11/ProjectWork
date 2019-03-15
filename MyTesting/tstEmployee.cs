@@ -41,16 +41,29 @@ namespace MyTesting
             Assert.AreEqual(testEmployeeSurName, AnEmployee.EmployeeSurName);
 
         }
-        [TestMethod]
+       // [TestMethod]
         //creating the propeity EmployeeContactNoExist by cheking to see that it exists
+       // public void EmployeeContactNoExist()
+       // {
+       //     clsEmployee AnEmployee = new clsEmployee();
+       //     string testEmployeeContactNo = "12345678901";
+            //the data type which we want to create is mentioned here , also transfer teh data in the varibe into the propeity
+        //    AnEmployee.EmployeeContactNo = testEmployeeContactNo;
+        //    Assert.AreEqual(testEmployeeContactNo, AnEmployee.EmployeeContactNo);
+        //}
+
+        [TestMethod]
         public void EmployeeContactNoExist()
         {
             clsEmployee AnEmployee = new clsEmployee();
-            Int64 testEmployeeContactNo = 12345678901;
-            //the data type which we want to create is mentioned here , also transfer teh data in the varibe into the propeity
+            string testEmployeeContactNo = "12345678901";
             AnEmployee.EmployeeContactNo = testEmployeeContactNo;
             Assert.AreEqual(testEmployeeContactNo, AnEmployee.EmployeeContactNo);
         }
+
+
+
+
         [TestMethod]
         //Creating the propeity EmployeeEmailExist by cheking to see that it exists
         public void EmployeeEmailExist()
@@ -175,7 +188,7 @@ namespace MyTesting
             //invoking the method
             Found = anEmployee.Find(EmployeeNo);
             //check the employee contact no
-            if (anEmployee.EmployeeContactNo != 07392738291)
+            if (anEmployee.EmployeeContactNo != "07392738291")
             {
                 OK = false;
             }
