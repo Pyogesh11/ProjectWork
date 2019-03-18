@@ -109,7 +109,14 @@ namespace MyClassLibrary
 
         public string Valid(string ConsoleName, string ConsolePrice, string ConsoleStock, string ConsoleManufacturer)
         {
-            return "";
+            String Error = "";
+
+            if(ConsoleName.Length == 0)
+            {
+                Error = Error + "This must not be blank";
+            }
+
+            return Error;
         }
     }
 }
