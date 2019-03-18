@@ -54,6 +54,7 @@
     <Compile Include="tstEmployee.cs" />
     <Compile Include="tstGames.cs" />
     <Compile Include="tstSupplier.cs" />
+    <Compile Include="tstSupplierCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyClassLibrary\MyClassLibrary.csproj">
