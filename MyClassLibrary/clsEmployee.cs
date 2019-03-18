@@ -143,9 +143,31 @@ namespace MyClassLibrary
 
         }
 
-        public string Valid(string employeeFirstName, string employeeSurName, string employeeContactNo, string employeeEmail)
+        public string Valid(string EmployeeFirstName, string EmployeeSurName, string EmployeeContactNo, string EmployeeEmail)
         {
-            //this will force the test to pass
+            //craeting a string varible to store the error
+            string Error = "";
+            if (EmployeeFirstName.Length == 0)
+            {
+                //RECORD THE ERROR
+                Error = Error + " The Employee's First Name, can not be blank.";
+            }
+            if (EmployeeFirstName.Length > 50)
+            {
+                //record the error msg
+                Error = Error + " The charector total for the first name can not exeed 50 letters, please shorten";
+            }
+            if (EmployeeSurName.Length == 0)
+            {
+                //RECORD THE ERROR
+                Error = Error + " The Employee's Sur Name, can not be blank.";
+            }
+            if (EmployeeSurName.Length > 50)
+            {
+                //record the error msg
+                Error = Error + " The charector total for the Sur name can not exeed 50 letters, please shorten";
+            }
+            //return any error messges
             return "";
         }
     }
