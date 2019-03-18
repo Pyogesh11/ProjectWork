@@ -141,7 +141,7 @@ namespace MyTesting
             clsConsole AConsole = new clsConsole(); 
             String Error = "";
             //create some test data to pass to the method
-            string ConsoleName = "123123123123123"; 
+            string ConsoleName = "abcabcabcabcabc"; 
             Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -152,7 +152,7 @@ namespace MyTesting
             clsConsole AConsole = new clsConsole(); 
             String Error = "";
             //create some test data to pass to the method
-            string ConsoleName = "1231231231231231"; 
+            string ConsoleName = "abcabcabcabcabca"; 
             Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -163,7 +163,7 @@ namespace MyTesting
             clsConsole AConsole = new clsConsole(); 
             String Error = "";
             //create some test data to pass to the method
-            string ConsoleName = "12312312"; 
+            string ConsoleName = "abcabcabcab"; 
             Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -173,7 +173,7 @@ namespace MyTesting
             clsConsole AConsole = new clsConsole();
             String Error = "";
             //create some test data to pass to the method
-            string ConsoleName = "12312312312312312";
+            string ConsoleName = "abcabcabcabcabca";
             Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
