@@ -113,24 +113,92 @@ namespace MyClassLibrary
 
         public bool Find(int game_ID)
         {
-
+            //reate an instace of the data connection 
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the game id to serach for 
+            DB.AddParameter("@Game_ID", Game_ID);
+            //execture the stored procedure 
+            DB.Execute("sproc_tblGames_FiterByGame_ID");
+            //if one record is found (there shuld be either one or zero)
+            if (DB.Count == 1)
             {
-                mGame_ID = 21;
-                mSupplier_ID = 1;
-                mGame_Name = "Test Game";
-                mGame_description = "Test Description for this property";
-                mGame_Quantity = 10;
-                mPlatform = "PlayStation4";
+                //copy the data from the data members to the private data memebrs 
+                mGame_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Game_ID"]);
+                mSupplier_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Supplier_ID"]);
+                mGame_Name = Convert.ToString(DB.DataTable.Rows[0]["Game_Name"]);
+                mGame_description = Convert.ToString(DB.DataTable.Rows[0]["Game_description"]);
+                mGame_Quantity = Convert.ToInt32(DB.DataTable.Rows[0]["Game_Quantity"]);
+                mPlatform = Convert.ToString(DB.DataTable.Rows[0]["Platform"]);
 
                 //always return true 
                 return true;
             }
+            //if no record is found
+            else
+            {
+                //return false indicating an error
+                return false;
+            }
+
 
         }
 
+        
+        public string Valid(string Game_Name, string Game_Description, String Game_Quantity, string Platform, String Supplier_ID)
+        {
+            //create a string varibale to store the error
+            String Error = "";
+            //if  the game_name is blank
+            if (this.Game_Name.Length == 0)
+            {
+                //record the error
+                Error = Error + "This field cannot be left blank";
+            }
+            //if the gane_Name is greater than 50 characters 
+            if (Game_Name.Length > 50)
+            {
+                //record the error
+                Error = Error + "This field can not have more than 50 characters";
+            }
+            if (Game_Description.Length == 0)
+            {
+                //record the rror 
+                Error = Error + "This field cannot be blank";
+            }
+            if (Game_Description.Length >100)
+            {
+                //record the error
+                Error = Error + "This field can not have more than 100 characters";
+            }
+            if (Game_Quantity.Length >1000)
+            {
+                //record the eror 
+                Error = Error + "This field has too many characters";
+            }
+            if (Platform.Length == 0 )
+            {
+                //record the rror 
+                Error = Error + "This field cannot be blank";
+            }
+            if (Platform.Length > 100)
+            {
+                //record the error
+                Error = Error + "This field can not have more than 100 characters ";
+            }
+            if (Supplier_ID.Length == 0) ;
+            {
+                //record the error 
+                Error = Error + "This field can not be blank";
+            }
+            if (Supplier_ID.Length > 200)
+            {
+                //record the error 
+                Error = Error + "This field can not have more than 200 characters";
+            }
 
 
-
-
+            //return any error message 
+            return Error;
+        }
     }
 }
