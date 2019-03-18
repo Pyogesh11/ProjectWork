@@ -33,10 +33,10 @@ namespace MyTesting
             clsEmployee TestItem = new clsEmployee();
             // set its propities
             TestItem.EmployeeNo = 1;
-            TestItem.EmployeeFirstName = "Tokigawa";
-            TestItem.EmployeeSurName = "Max";
+            TestItem.EmployeeFirstName = "Max";
+            TestItem.EmployeeSurName = "Tokigawa";
             TestItem.EmployeeContactNo = "07392738291";
-            TestItem.EmployeeEmail = "dingas@gmail.com.com";
+            TestItem.EmployeeEmail = "dingas@gmail.com.";
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data ti the proepity
@@ -46,6 +46,14 @@ namespace MyTesting
 
 
 
+        }
+
+
+        [TestMethod]
+        public void CountEmployeeOK()
+        {
+            // creating an instance of the class clsEmployeeCollection
+            //dadeda
         }
     }
 
