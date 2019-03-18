@@ -8,20 +8,23 @@ namespace MyTesting
         public class tstEmployee
 
     {
-        //good test data
-        //creating some test data to pass to the valid method
-        string EmployeeFirstName = "Areeb";
-        string EmployeeSurName = "Pajwani";
-        string EmployeeEmail = "Areeb@gamil.com";
-        string EmployeeContactNo = "07152872622"
-        
-        
-        
-        
-        
-        
+             //good test data
+             //creating some test data to pass to the valid method
+             //MAKES IT AVALAIBLE TO ALL TEST
+             //And if we want to add a new propeity, we can just add it here
+             string EmployeeFirstName = "Areeb";
+             string EmployeeSurName = "Pajwani";
+             string EmployeeEmail = "Areeb@gamil.com";
+        string EmployeeContactNo = "07152872622";
+
+
+
+
+
+
         //creating an instances of my class clsEmployee
-        [TestMethod]
+        
+         [TestMethod]
         public void InsttanceOK()
         {
             clsEmployee AnEmployee = new clsEmployee();
@@ -247,8 +250,246 @@ namespace MyTesting
         }
 
 
+        //TEST FOR THE PARAMTERS 
+
+        //Testing for EmployeeFirstName Min 1
+        [TestMethod]
+        public void EmployeeFirstNameMinMinusOne()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            String EmployeeFirstName = "";
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //TEST TO SEE THAT THE RESULTS ARE CORRECT
+            Assert.AreEqual(Error, "");
+
+        }
+
+        //testing for EmployeeFirst Name Min
+        [TestMethod]
+        public void EmployeeFirstNameMin()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeFirstName = "N";
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //testing for EmployeeFirst Name Min plus one
+        [TestMethod]
+        public void EmployeeFirstNameMinPlusOne()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeFirstName = "NN";
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //testing for EmployeeFirst Name Max minus one so 49
+        [TestMethod]
+        public void EmployeeFirstNameMaxLessOne()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeFirstName = "NnnnnnnnnnNnnnnnnnnnNnnnnnnnnnNnnnnnnnnnNnnnnnnnn"; //49 chars here as max is 50
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //testing for EmployeeFirst Name Max, so 50
+        [TestMethod]
+        public void EmployeeFirstNameMax()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeFirstName = "NnnnnnnnnnNnnnnnnnnnNnnnnnnnnnNnnnnnnnnnNnnnnnnnnn"; //50 chars here as max is 50
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //testing for EmployeeFirst Name Middle, so 25
+        [TestMethod]
+        public void EmployeeFirstNameMid()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeFirstName = "NnnnnnnnnnNnnnnnnnnnNnnnn"; //25 chars here as max is 50
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
 
 
+        //testing for EmployeeFirst Name Max plus one so 59
+
+        [TestMethod]
+        public void EmployeeFirstNameMaxPlusOne()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeFirstName = "NnnnnnnnnnNnnnnnnnnnNnnnnnnnnnNnnnnnnnnnNnnnnnnnnnN"; //51 chars here as max is 50
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //testing for EmployeeFirst Name Max exstream
+        [TestMethod]
+        public void EmployeeFirstNameMaxExstream()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeFirstName = ""; //this is blank a sthe following line of code will fill it
+            EmployeeFirstName = EmployeeFirstName.PadRight(500, 'N'); //essential its saying give it 500chars. This should fail
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
+
+
+
+
+
+
+
+
+        //Testing for EmployeeSurName Min MINUS 1
+        [TestMethod]
+        public void EmployeeSurNameMinMinusOne()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            String EmployeeSurName = "";
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //TEST TO SEE THAT THE RESULTS ARE CORRECT
+            Assert.AreEqual(Error, "");
+
+        }
+        //testing for Employee Sur Name Min
+        [TestMethod]
+        public void EmployeeSurNameMin()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeSurNameName = "C";
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
+        
+        //testing for EmployeeSurName Name Min plus one
+        [TestMethod]
+        public void EmployeeSurNameMinPlusOne()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeSurName = "CC";
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //testing for EmployeeSurName Max minus one so 49
+        [TestMethod]
+        public void EmployeeSurNameMaxLessOne()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeSurName = ""; //empty a sthe next line will fill it with 49 chars
+            EmployeeSurName = EmployeeSurName.PadRight(49,'c' );
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //testing for EmployeeSur Name Max, so 50
+        [TestMethod]
+        public void EmployeeSurNameMax()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeSurName = "";
+            EmployeeSurName = EmployeeSurName.PadRight(50, 'C');
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
+        
+        //testing for EmployeeSur Name Middle, so 25
+        [TestMethod]
+        public void EmployeeSurNameMid()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeSurName = "";
+            EmployeeSurName = EmployeeSurName.PadRight(25, 'C');
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //testing for EmployeeSurName Max plus one so 59
+
+        [TestMethod]
+        public void EmployeeSurNameMaxPlusOne()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeSurName = "";
+            EmployeeSurName = EmployeeSurName.PadRight(59, 'C');
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //testing for EmployeeSur Name Max exstream
+        [TestMethod]
+        public void EmployeeSurNameMaxExstream()
+        {
+            clsEmployee AnEmployee = new clsEmployee();
+            String Error = "";
+            //creating some test data
+            String EmployeeSurName = ""; //this is blank a sthe following line of code will fill it
+            EmployeeFirstName = EmployeeSurName.PadRight(500, 'C'); //essential its saying give it 500chars. This should fail
+            //invoking the method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail);
+            //checking to see that the results are correct
+            Assert.AreEqual(Error, "");
+        }
 
 
 
