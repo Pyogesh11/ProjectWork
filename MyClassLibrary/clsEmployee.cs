@@ -100,7 +100,7 @@ namespace MyClassLibrary
             
         }
 
-        public bool Find(int employeeNo)
+        public bool Find(int EmployeeNo)
         {
             //creating an instance of the data class connection
             clsDataConnection DB = new clsDataConnection();
@@ -112,10 +112,10 @@ namespace MyClassLibrary
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data numbers
-                mEmployeeNo = Convert.ToInt32(DB.DataTable.Rows[0]["EmployeeNo"]);
+                mEmployeeNo = Convert.ToInt32(DB.DataTable.Rows[0]["EmployeeNo" ]);
                 mEmployeeFirstName = Convert.ToString(DB.DataTable.Rows[0]["EmployeeFirstName"]);
                 mEmployeeSurName = Convert.ToString(DB.DataTable.Rows[0]["EmployeeSurName"]);
-                mEmployeeEmail = Convert.ToString(DB.DataTable.Rows[0]["EmployeeeEmail"]);
+                mEmployeeEmail = Convert.ToString(DB.DataTable.Rows[0]["EmployeeEmail"]);
                 mEmployeeContactNo = Convert.ToString(DB.DataTable.Rows[0]["EmployeeContactNo"]);
                 // return that everything worked ok
                 return true;
@@ -132,15 +132,7 @@ namespace MyClassLibrary
 
 
 
-            //set the private data meber to test the data value
-         //   mEmployeeNo = 21;
-         //   mEmployeeFirstName = "Max"; 
-         //   mEmployeeSurName = "Tokigawa";
-         //   mEmployeeContactNo = "07392738291";
-         //   mEmployeeEmail = "Dingas@gmail.com";
-            //always return true
-         //   return true;
-
+          
         }
 
         public string Valid(string EmployeeFirstName, string EmployeeSurName, string EmployeeContactNo, string EmployeeEmail)
@@ -167,6 +159,40 @@ namespace MyClassLibrary
                 //record the error msg
                 Error = Error + " The charector total for the Sur name can not exeed 50 letters, please shorten";
             }
+           
+            
+
+            // IF statments for EmployeeContactNo
+
+            if (EmployeeContactNo.Length == 0)
+
+            {
+                // the error msg
+                Error = Error + " The Employee Contact No can not be blank";
+            }
+            if (EmployeeContactNo.Length > 13)
+
+            {
+                // the error msg
+                Error = Error + " The Employee Contact No can not be exceed 13 charecters";
+            }
+
+
+
+            if (EmployeeEmail.Length == 0)
+
+            {
+                // the error msg
+                Error = Error + " The Employee Email can not be blank";
+            }
+            if (EmployeeEmail.Length > 50)
+
+            {
+                // the error msg
+                Error = Error + " The Employee Contact No can not be exceed 13 charecters";
+            }
+
+
             //return any error messges
             return "";
         }
