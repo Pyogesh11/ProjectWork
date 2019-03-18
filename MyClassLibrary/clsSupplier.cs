@@ -153,8 +153,70 @@ namespace MyClassLibrary
             {
                 //return indicating a problem
                 return false;
-            }
-            
+            }     
+
         }
+
+        //validation part
+        public string Valid(string Supplier_Address, string Supplier_Email, string Supplier_Name, string Supplier_Phone_No)
+        {
+            //create a string variable to stroe the error
+            string Error = "";
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //is the supplier address blank
+            if (Supplier_Address.Length == 0)
+            {
+                //record the error
+                Error = Error + "the supplier_Address may not be blank : ";
+            }
+            //if the town is too long
+            if (Supplier_Address.Length > 50)
+            {
+                //record the error
+                Error = Error + "The supplier address must be less than 50 characters : ";
+            }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //is the Supplier_Email blank
+            if (Supplier_Email.Length == 0)
+            {
+                //record the error
+                Error = Error + "the Supplier_Email may not be blank : ";
+            }
+            //if the town is too long
+            if (Supplier_Email.Length > 50)
+            {
+                //record the error
+                Error = Error + "The Supplier_Email must be less than 50 characters : ";
+            }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //is the Supplier_Name blank
+            if (Supplier_Name.Length == 0)
+            {
+                //record the error
+                Error = Error + "the Supplier_Name may not be blank : ";
+            }
+            //if the town is too long
+            if (Supplier_Name.Length > 20)
+            {
+                //record the error
+                Error = Error + "The Supplier_Name must be less than 20 characters : ";
+            }
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //is the Supplier_Phone_No blank
+            if (Supplier_Phone_No.Length == 0)
+            {
+                //record the error
+                Error = Error + "the Supplier_Phone_No may not be blank : ";
+            }
+            //if the town is too long
+            if (Supplier_Phone_No.Length > 15)
+            {
+                //record the error
+                Error = Error + "The Supplier_Phone_No must be less than 15 characters : ";
+            }
+
+            // return any error messages
+            return "";
+        }   
     }
 }
