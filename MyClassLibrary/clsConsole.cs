@@ -119,6 +119,10 @@ namespace MyClassLibrary
             {
                 Error = Error + "The Console Name must be less thn 16 characters: ";
             }
+            if (ConsolePrice.Length == 0)
+            {
+                Error = Error + "This must not be blank";
+            }
             return Error;
         }
     }

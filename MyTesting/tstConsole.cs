@@ -177,6 +177,20 @@ namespace MyTesting
             Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
+
+        [TestMethod]
+        public void ConsolePriceMinMinusOne()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleName = ""; //this should be ok
+
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
         [TestMethod]
         public void ConsolePriceMin()
         {
