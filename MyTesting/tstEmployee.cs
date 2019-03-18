@@ -6,7 +6,20 @@ namespace MyTesting
 {
         [TestClass]  
         public class tstEmployee
+
     {
+        //good test data
+        //creating some test data to pass to the valid method
+        string EmployeeFirstName = "Areeb";
+        string EmployeeSurName = "Pajwani";
+        string EmployeeEmail = "Areeb@gamil.com";
+        string EmployeeContactNo = "07152872622"
+        
+        
+        
+        
+        
+        
         //creating an instances of my class clsEmployee
         [TestMethod]
         public void InsttanceOK()
@@ -97,9 +110,11 @@ namespace MyTesting
             clsEmployee AnEmployee = new clsEmployee();
             // creating a boolean varbble to store the results of the validation
             Boolean Found = false;
-            Int32 EmployeeNo = 21;
+           
             //craeting test data to test the method
-            string EmployeeFirstName = "Nadim";
+             Int32 EmployeeNo = 1;
+            // string EmployeeFirstName = "Nadim";
+           
             //invoking the method
             Found = AnEmployee.Find(EmployeeNo);
             Assert.IsTrue(Found);
@@ -117,11 +132,11 @@ namespace MyTesting
             //boolean varible to record if data is ok (assume it is???)
             Boolean OK = true;
             //craeting test data to test all thsi out
-            Int32 EmployeeNo = 21;
+            Int32 EmployeeNo = 1;
             //invoking the method
             Found = anEmployee.Find(EmployeeNo);
             //check the employee no
-            if (anEmployee.EmployeeNo != 21)
+            if (anEmployee.EmployeeNo != 1)
             {
                 OK = false;
             }
@@ -137,7 +152,7 @@ namespace MyTesting
             Boolean found = false;
             //boolean varible to record if data is ok (assume it is???)
             Boolean ok = true;
-            Int32 EmployeeNo = 21;
+            Int32 EmployeeNo = 1;
             //creating test data to test all of it out
             //string employeefirstname = "max";
             //invoke the method
@@ -159,7 +174,7 @@ namespace MyTesting
             Boolean Found = false;
             //boolean varible to record if data is ok (assume it is???)
             Boolean OK = true;
-            Int32 EmployeeNo = 21;
+            Int32 EmployeeNo = 1;
             //creating test data to test all of it out
             //string EmployeeSurName = "Tokigawa";
             //invoke the method
@@ -182,7 +197,7 @@ namespace MyTesting
             Boolean Found = false;
             //boolean varible to record if data is ok (assume it is???)
             Boolean OK = true;
-            Int32 EmployeeNo = 21;
+            Int32 EmployeeNo = 1;
             //craeting test data to test all thsi out
             Int64 EmployeeContactNo = 07392738291;
             //invoking the method
@@ -204,7 +219,7 @@ namespace MyTesting
             Boolean Found = false;
             //boolean varible to record if data is ok (assume it is???)
             Boolean OK = true;
-            Int32 EmployeeNo = 21;
+            Int32 EmployeeNo = 1;
             //creating test data to test all of it out
             string EmployeeEmail = "Dingas@gmail.com";
             //invoke the method
@@ -217,6 +232,26 @@ namespace MyTesting
             Assert.IsTrue(OK);
 
         }
+
+        // The following code is for validating data enteryes. 
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //creating an instance of the class we want to create
+            clsEmployee AnEmployee = new clsEmployee();
+            //string varible  to store any error message
+            string Error = "";
+            //invoking the valid method
+            Error = AnEmployee.Valid(EmployeeFirstName, EmployeeSurName, EmployeeContactNo, EmployeeEmail); 
+
+        }
+
+
+
+
+
+
+
     }
 }
 
