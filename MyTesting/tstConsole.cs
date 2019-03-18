@@ -250,6 +250,156 @@ namespace MyTesting
             Assert.AreEqual(Error, "");
         }
 
+        [TestMethod]
+        public void ConsoleManufacturerMinMinusOne()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleManufacturer = ""; //this should be ok
+
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void ConsoleManufacturerMin()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleManufacturer = "X";
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void ConsoleManufacturerMinPlusOne()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleManufacturer = "XS";
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void ConsoleManufacturerMaxMinusOne()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleManufacturer = "abcabcabcabcabcabc";
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void ConsoleManufacturerMax()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleManufacturer = "abcabcabcabcabcabca";
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void ConsoleManufacturerMid()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleManufacturer = "abcabcabca";
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        public void ConsoleManufacturerMaxPlusOne()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleManufacturer = "abcabcabcabcabca";
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ConsoleStockMinMinusOne()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleStock = ""; //this should be ok
+
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ConsoleStockMin()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleStock = "0";
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void ConsoleStockMinPlusOne()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleStock = "1";
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void ConsoleStockMaxMinusOne()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleStock = "999999"; //this should be ok
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             //invoke the method
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void ConsoleStockMax()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleStock = "1000000"; //this should be ok
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              //invoke the method
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void ConsoleStockMid()
+        {
+            //create an instance 
+            clsConsole AConsole = new clsConsole();
+            String Error = "";
+            //create some test data to pass to the method
+            string ConsoleStock = "500000"; //this should be ok
+                                                                                                                                                                                                                                                                                                //invoke the method
+            Error = AConsole.Valid(ConsoleManufacturer, ConsoleName, ConsolePrice, ConsoleStock); //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
 
 
     }
