@@ -53,6 +53,7 @@
     <Compile Include="tstCustomer.cs" />
     <Compile Include="tstEmployee.cs" />
     <Compile Include="tstGames.cs" />
+    <Compile Include="tstGamesCollection.cs" />
     <Compile Include="tstSupplier.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MyClassLibrary\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
