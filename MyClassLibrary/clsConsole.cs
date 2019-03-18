@@ -115,13 +115,33 @@ namespace MyClassLibrary
             {
                 Error = Error + "This must not be blank";
             }
-            if(ConsoleName.Length > 16)
+            if (ConsoleManufacturer.Length == 0)
             {
-                Error = Error + "The Console Name must be less thn 16 characters: ";
+                Error = Error + "This must not be blank";
+            }
+            if (ConsoleName.Length > 16)
+            {
+                Error = Error + "The Console Name must be less than 16 characters: ";
+            }
+            if (ConsoleManufacturer.Length > 19)
+            {
+                Error = Error + "The Console Manufacturer must be less than 19 characters: ";
             }
             if (ConsolePrice.Length == 0)
             {
                 Error = Error + "This must not be blank";
+            }
+            if (ConsolePrice.Length > 500)
+            {
+                Error = Error + "The Console Name must be less than 500 characters: ";
+            }
+            if (ConsoleStock.Length == 0)
+            {
+                Error = Error + "This must not be blank";
+            }
+            if (ConsolePrice.Length > 1000000)
+            {
+                Error = Error + "The Console Name must be less than 1000000 characters: ";
             }
             return Error;
         }
