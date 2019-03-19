@@ -6,23 +6,20 @@ using MyClassLibrary;
 namespace MyTesting
 {
     [TestClass]
-    public class tstConsoleCollection
+    public class TstConsoleCollection
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
+       
         [TestMethod]
         public void InstanceOK()
         {
-            clsConsoleCollection AllConsoles = new clsConsoleCollection();
+            ClsConsoleCollection AllConsoles = new ClsConsoleCollection();
             Assert.IsNotNull(AllConsoles);
         }
         [TestMethod]
         public void ConsoleListOK()
         {
             //creates instance of class we want to create
-            clsConsoleCollection AllConsoles = new clsConsoleCollection();
+            ClsConsoleCollection AllConsoles = new ClsConsoleCollection();
             List<clsConsole> TestList = new List<clsConsole>();
             clsConsole TestItem = new clsConsole();
             //sets properties
@@ -36,29 +33,7 @@ namespace MyTesting
             Assert.AreEqual(AllConsoles.ConsoleList, TestList);
 
         }
-        [TestMethod]
-        public void ConsoleListAndCountOK()
-        {
-            //creates instance of class we want to create
-            clsConsoleCollection AllConsoles = new clsConsoleCollection();
-            List<clsConsole> TestList = new List<clsConsole>();
-            clsConsole TestItem = new clsConsole();
-            //sets properties
-            TestItem.ConsoleNo = 1;
-            TestItem.Name = "Xbox";
-            TestItem.Manufacturer = "Microsoft";
-            TestItem.Price = 250;
-            TestItem.Stock = 10000;
-            TestList.Add(TestItem);
-            AllConsoles.ConsoleList = TestList;
-            Assert.AreEqual(AllConsoles.ConsoleList, TestList);
+        
 
-        }
-        [TestMethod]
-        public void TwoRecordsPresent()
-        {
-            clsConsoleCollection AllConsoles = new clsConsoleCollection();
-            Assert.AreEqual(AllConsoles.Count, 2);
-        }
     }
 }
