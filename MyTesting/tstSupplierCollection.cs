@@ -50,7 +50,7 @@ namespace MyTesting
             //create an instance of the class we want to create
             clsSupplierCollection AllSuppliers = new clsSupplierCollection();
             //create some test data to assign to the property 
-            Int32 SomeCount = 2;
+            Int32 SomeCount = 3;
             //assign the data to the property
             AllSuppliers.Count = SomeCount;
             //test to see that the two values are the same
@@ -79,32 +79,6 @@ namespace MyTesting
 
         }
 
-        [TestMethod]
-        public void ListAndCountOK()
-        {
-            //create an instance of the class we want to create
-            clsSupplierCollection AllSuppliers = new clsSupplierCollection();
-            //create some test data to assign to the property 
-            //in this case data needs to be a list of objects
-            List<clsSupplier> TestList = new List<clsSupplier>();
-            //add an item to the list
-            //create the item of test data
-            clsSupplier TestItem = new clsSupplier();
-            //set its properties
-            TestItem.Active = true;
-            TestItem.Supplier_Address = "Some Supplier Address ";
-            TestItem.CountyNo = 001;
-            TestItem.Supplier_Email = "abcd.e@gmail.com";
-            TestItem.Supplier_Id = 1;
-            TestItem.Supplier_Name = "Game.net";
-            TestItem.Supplier_Phone_No = "07331415589";
-            //add the item to the test list
-            TestList.Add(TestItem);
-            //assign the data to the property
-            AllSuppliers.SupplierList = TestList;
-            //test to see that the two values are the same
-            Assert.AreEqual(AllSuppliers.Count, TestList.Count);
-        }
 
         [TestMethod]
         public void TwoRecordsPresent()
@@ -112,7 +86,7 @@ namespace MyTesting
             //create an instance of the class we want to create
             clsSupplierCollection AllSuppliers = new clsSupplierCollection();
             //test to see that the two values are the same
-            Assert.AreEqual(AllSuppliers.Count, 2);
+            Assert.AreEqual(AllSuppliers.Count, 3);
         }
     }
 }

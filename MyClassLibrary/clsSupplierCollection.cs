@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MyClassLibrary
 {
@@ -37,30 +38,34 @@ namespace MyClassLibrary
         //constructor for the class
         public clsSupplierCollection()
         {
-            //create the item of test data
-            clsSupplier TestItem = new clsSupplier();
-            //set its properties
-            TestItem.Active = true;
-            TestItem.Supplier_Address = "Some Supplier Address";
-            TestItem.CountyNo = 001;
-            TestItem.Supplier_Email = "abcd.e@gmail.com";
-            TestItem.Supplier_Id = 1;
-            TestItem.Supplier_Name = "Game.net";
-            TestItem.Supplier_Phone_No = "07331415589";
-            //add the item to the test list
-            mSupplierList.Add(TestItem);
-            //re initialise the object for some new data
-            TestItem = new clsSupplier();
-            //set its properties
-            TestItem.Active = true;
-            TestItem.Supplier_Address = "another Supplier Address";
-            TestItem.CountyNo = 2;
-            TestItem.Supplier_Email = "abcd.e7@gmail.com";
-            TestItem.Supplier_Id = 005;
-            TestItem.Supplier_Name = "another Game.net";
-            TestItem.Supplier_Phone_No = "07331415599";
-            //add the item to the test list
-            mSupplierList.Add(TestItem);
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount = 0;
+            //object for data connection
+            clsDataConnection DB = new clsDataConnection();
+            //execute the stroe procedure
+            DB.Execute("sproc_tblSupplier_SelectAll");
+            //get the count of records
+            RecordCount = DB.Count;
+            //while there are records to process
+            while (Index < RecordCount)
+            {
+                //create a blank supplier
+                clsSupplier ASupplier = new clsSupplier();
+                //read in the fields from the current record
+                ASupplier.Active = Convert.ToBoolean(DB.DataTable.Rows[Index]["Active"]);
+                ASupplier.Supplier_Id = Convert.ToInt32(DB.DataTable.Rows[Index]["Supplier_Id"]);
+                ASupplier.Supplier_Address = Convert.ToString(DB.DataTable.Rows[Index]["Supplier_Address"]);
+                ASupplier.CountyNo = Convert.ToInt32(DB.DataTable.Rows[Index]["CountyNo"]);
+                ASupplier.Supplier_Email = Convert.ToString(DB.DataTable.Rows[Index]["Supplier_Email"]);
+                ASupplier.Supplier_Phone_No = Convert.ToString(DB.DataTable.Rows[Index]["Supplier_Phone_No"]);               
+                //add the record to the private data member
+                mSupplierList.Add(ASupplier);
+                //point at the next record
+                Index++;
+
+            }
         }
 
 
