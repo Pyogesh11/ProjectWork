@@ -426,6 +426,23 @@ namespace MyTesting
             Assert.AreEqual(Error, "");
         }
 
+        //
+        [TestMethod]
+        public void Supplier_AddressExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsSupplier ASupplier = new clsSupplier();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string Supplier_Address = "";
+            Supplier_Address = Supplier_Address.PadRight(51, 'a');
+            //invoke the method
+            Error = ASupplier.Valid(Supplier_Address, Supplier_Email, Supplier_Name, Supplier_Phone_No);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
         //Testing min and max for Supplier_Email 
         [TestMethod]
         public void Supplier_EmailMinLessOne()
@@ -530,6 +547,22 @@ namespace MyTesting
             //this should pass
             string Supplier_Email = "";
             Supplier_Email = Supplier_Email.PadRight(25, 'a');
+            //invoke the method
+            Error = ASupplier.Valid(Supplier_Address, Supplier_Email, Supplier_Name, Supplier_Phone_No);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Supplier_EmailExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsSupplier ASupplier = new clsSupplier();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string Supplier_Email = "";
+            Supplier_Email = Supplier_Email.PadRight(60, 'a');
             //invoke the method
             Error = ASupplier.Valid(Supplier_Address, Supplier_Email, Supplier_Name, Supplier_Phone_No);
             //test to see that the result is correct
@@ -646,6 +679,23 @@ namespace MyTesting
             Assert.AreEqual(Error, "");
         }
 
+        [TestMethod]
+        public void Supplier_NameExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsSupplier ASupplier = new clsSupplier();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string Supplier_Name = "";
+            Supplier_Name = Supplier_Name.PadRight(50, 'a');
+            //invoke the method
+            Error = ASupplier.Valid(Supplier_Address, Supplier_Email, Supplier_Name, Supplier_Phone_No);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+
         //Testing min and max for Supplier_Phone_No 
         [TestMethod]
         public void Supplier_Phone_NoMinLessOne()
@@ -722,6 +772,22 @@ namespace MyTesting
             Error = ASupplier.Valid(Supplier_Address, Supplier_Email, Supplier_Name, Supplier_Phone_No);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
-        }              
+        }
+
+        [TestMethod]
+        public void Supplier_Phone_NoExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsSupplier ASupplier = new clsSupplier();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string Supplier_Phone_No = "";
+            Supplier_Phone_No = Supplier_Phone_No.PadRight(16, 'a');
+            //invoke the method
+            Error = ASupplier.Valid(Supplier_Address, Supplier_Email, Supplier_Name, Supplier_Phone_No);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
     }
 }
