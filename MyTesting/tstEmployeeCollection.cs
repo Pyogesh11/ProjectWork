@@ -56,7 +56,7 @@ namespace MyTesting
             // creating an instance of the class clsEmployeeCollection
             clsEmployeeCollection AllEmployee = new clsEmployeeCollection();
             // creating some test data yo assign a propeity
-            Int32 SomeCount = 0;
+            Int32 SomeCount = 2;
             //assign the data to the proepity
             AllEmployee.Count = SomeCount;
             Assert.AreEqual(AllEmployee.Count, SomeCount);
@@ -103,6 +103,17 @@ namespace MyTesting
 
         }
         
+
+        [TestMethod]
+        public void TwoRecordsPresent()
+        {
+            //creating an instnc of the collection class
+            clsEmployeeCollection AllEmployee = new clsEmployeeCollection();
+            //test to see that the two values are the same
+            Assert.AreEqual(AllEmployee.Count, 2);
+
+        }
+
 
     }
 
