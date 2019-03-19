@@ -54,7 +54,7 @@ namespace MyClassLibrary
                     //create a blank customer
                     clsCustomer ACustomer = new clsCustomer();
                     //read in the fields from the current record
-                    ACustomer.Gender = Convert.ToBoolean(DB.DataTable.Rows[Index]["Gender"]);
+                    ACustomer.Active = Convert.ToBoolean(DB.DataTable.Rows[Index]["Active"]);
                     ACustomer.CustomerID = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerID"]);
                     ACustomer.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
                     ACustomer.SurName = Convert.ToString(DB.DataTable.Rows[Index]["SurName"]);
