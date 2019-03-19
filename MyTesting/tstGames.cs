@@ -246,10 +246,10 @@ namespace MyTesting
             //string variable to storee any error message 
             String Error = "";
             //create some tst data to pass to the method 
-            String Game_Name = "";//this should trigger an error 
+            String Game_Name = "a";//this should trigger an error 
             
             //invoke the method
-            Error = AGame.Valid(this.Game_Name, Game_Description, Game_Quantity, Platform, Supplier_ID);
+            Error = AGame.Valid(Game_Name, Game_Description, Game_Quantity, Platform, Supplier_ID);
             //test to see hat the result is correct 
             Assert.AreNotEqual(Error, "");
 
@@ -479,7 +479,7 @@ namespace MyTesting
             //invoke the method
             Error = AGame.Valid(Game_Name, Game_Description, Game_Quantity, Platform, Supplier_ID);
             //test to see hat the result is correct 
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
