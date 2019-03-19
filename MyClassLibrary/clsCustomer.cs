@@ -6,7 +6,7 @@ namespace MyClassLibrary
     {
         //private data member for the HouseNo property  
         //public property for gender
-        private Boolean mGender;
+        private Boolean mActive;
         private string mHouseNo;
         private Int32 mCustomerID;
         private int mCountyNo;
@@ -38,7 +38,7 @@ namespace MyClassLibrary
                 mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
                 mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
                 mPhoneNo = Convert.ToInt32(DB.DataTable.Rows[0]["PhoneNo"]);
-                mGender = Convert.ToBoolean(DB.DataTable.Rows[0]["Gender"]);
+                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
                 //return that everything worked OK 
                 return true;
             }
@@ -81,17 +81,17 @@ namespace MyClassLibrary
         }
 
         //public property for Gender 
-        public bool Gender
+        public bool Active
         {
             get
             {
                 //return the private data
-                return mGender;
+                return mActive;
             }
             set
             {
                 //set the value of the private data
-                mGender = value;
+                mActive = value;
             }
         }
 

@@ -9,7 +9,7 @@ namespace MyTesting
     public class tstCustomerCollection
     {
         [TestMethod]
-        public void IntsnaceOK()
+        public void InstanceOK()
         {
             //create an instance of the class we want to create
             clsCustomerCollection AllCustomer = new clsCustomerCollection();
@@ -29,7 +29,7 @@ namespace MyTesting
             //create the item of test data 
             clsCustomer TestItem = new clsCustomer();
             //set its properties 
-            TestItem.Gender = true;
+            TestItem.Active = true;
             TestItem.CustomerID = 4;
             TestItem.CountyNo = 4;
             TestItem.PhoneNo = 122222784;
@@ -47,7 +47,7 @@ namespace MyTesting
             Assert.AreEqual(AllCustomer.CustomerList, TestList);
         }
         [TestMethod]
-        public void CountPropertyOK()
+         public void CountPropertyOK()
         {
             //create an instance of the class we want to create 
             clsCustomerCollection AllCustomer = new clsCustomerCollection();
@@ -66,7 +66,7 @@ namespace MyTesting
             //create some test data to assign to the property 
             clsCustomer TestCustomer = new clsCustomer();
             //set the properties of the test object 
-            TestCustomer.Gender = true;
+            TestCustomer.Active = true;
             TestCustomer.CustomerID = 4;
             TestCustomer.CountyNo = 4;
             TestCustomer.FirstName = "Mila";

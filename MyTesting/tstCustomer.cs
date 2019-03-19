@@ -25,16 +25,16 @@ namespace MyTesting
             Assert.IsNotNull(ACustomer);
         }
         [TestMethod]
-        public void GenderPropertyOK()
+        public void ActivePropertyOK()
         {
             //create an instance of the class we want to create 
             clsCustomer ACustomer = new clsCustomer();
             //create some test data to assign to the property 
             Boolean TestData = true;
             //assign the data to the property 
-            ACustomer.Gender = TestData;
+            ACustomer.Active = TestData;
             //test to see that the two values are the same 
-            Assert.AreEqual(ACustomer.Gender, TestData);
+            Assert.AreEqual(ACustomer.Active, TestData);
         }
         [TestMethod]
         public void CountyNoPropertyOK()
@@ -351,7 +351,7 @@ namespace MyTesting
             Assert.IsTrue(OK);
         }
         [TestMethod]
-        public void TestGenderFound()
+        public void TestActiveFound()
         {
             //create an instance of the class we want to create
             clsCustomer ACustomer = new clsCustomer();
@@ -364,7 +364,7 @@ namespace MyTesting
             //invoke the method 
             Found = ACustomer.Find(CustomerID);
             //check the customer id 
-            if (ACustomer.Gender != true)
+            if (ACustomer.Active != true)
             {
                 OK = false;
             }
