@@ -15,14 +15,14 @@ namespace MyTesting
         [TestMethod]
         public void InstanceOK()
         {
-            clsConsoleCollection AllConsoles = new clsConsoleCollection();
+            ClsConsoleCollection AllConsoles = new ClsConsoleCollection();
             Assert.IsNotNull(AllConsoles);
         }
         [TestMethod]
         public void ConsoleListOK()
         {
             //creates instance of class we want to create
-            clsConsoleCollection AllConsoles = new clsConsoleCollection();
+            ClsConsoleCollection AllConsoles = new ClsConsoleCollection();
             List<clsConsole> TestList = new List<clsConsole>();
             clsConsole TestItem = new clsConsole();
             //sets properties
@@ -40,7 +40,7 @@ namespace MyTesting
         public void ConsoleListAndCountOK()
         {
             //creates instance of class we want to create
-            clsConsoleCollection AllConsoles = new clsConsoleCollection();
+            ClsConsoleCollection AllConsoles = new ClsConsoleCollection();
             List<clsConsole> TestList = new List<clsConsole>();
             clsConsole TestItem = new clsConsole();
             //sets properties
@@ -54,11 +54,6 @@ namespace MyTesting
             Assert.AreEqual(AllConsoles.ConsoleList, TestList);
 
         }
-        [TestMethod]
-        public void TwoRecordsPresent()
-        {
-            clsConsoleCollection AllConsoles = new clsConsoleCollection();
-            Assert.AreEqual(AllConsoles.Count, 2);
-        }
+
     }
 }
