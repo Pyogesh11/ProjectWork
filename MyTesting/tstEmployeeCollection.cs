@@ -8,6 +8,14 @@ namespace MyTesting
     [TestClass]
     public class tstEmployeeCollection
     {
+
+
+
+
+
+
+
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -56,7 +64,7 @@ namespace MyTesting
             // creating an instance of the class clsEmployeeCollection
             clsEmployeeCollection AllEmployee = new clsEmployeeCollection();
             // creating some test data yo assign a propeity
-            Int32 SomeCount = 2;
+            Int32 SomeCount = 6;
             //assign the data to the proepity
             AllEmployee.Count = SomeCount;
             Assert.AreEqual(AllEmployee.Count, SomeCount);
@@ -80,40 +88,61 @@ namespace MyTesting
             Assert.AreEqual(AllEmployee.ThisEmployee, TestEmployee);
         }
 
+        //creating the add method
         [TestMethod]
-        public void ListAndCountOK()
+        public void AddMethodOK()
         {
-            //CREATING AN INSTANCE OF THE CLASS WE WANT TO CREATE
-            clsEmployeeCollection AllEmployee = new clsEmployeeCollection();
-            List<clsEmployee> TestList = new List<clsEmployee>();
-            //add an item to the list
-            //create the item of test data
+            //create an instance pf yje c;ass we wamt to create
+            clsEmployeeCollection allEmployee = new clsEmployeeCollection();
             clsEmployee TestItem = new clsEmployee();
-            //aet its propeities
+            //create an item of test data
+            Int32 PrimaryKey = 0;
+            //set the paramters
             TestItem.EmployeeNo = 1;
-            TestItem.EmployeeFirstName = "Max";
-            TestItem.EmployeeSurName = "Tokigawa";
-            TestItem.EmployeeContactNo = "07392738291";
-            TestItem.EmployeeEmail = "dingas@gmail.com";
-            //add the item  to the test list
-            TestList.Add(TestItem);
-            AllEmployee.EmployeeList = TestList;
+            TestItem.EmployeeFirstName = "Test";
+            TestItem.EmployeeSurName = "Data";
+            TestItem.EmployeeContactNo = "07152637171";
+            TestItem.EmployeeEmail = "Test@gamail.com";
+            //SET This EMPLOYEE TO THE TEST DATA
+            allEmployee.ThisEmployee = TestItem;
+            //add the record
+            PrimaryKey = allEmployee.Add();
+            //set the primary key of the test data
+            TestItem.EmployeeNo = PrimaryKey;
+            //find the record 
+            allEmployee.ThisEmployee.Find(PrimaryKey);
             //test to see that the two values are the same
-            Assert.AreEqual(AllEmployee.Count, TestList.Count); 
+            Assert.AreEqual(allEmployee.ThisEmployee, TestItem);
 
         }
-        
-
-        [TestMethod]
-        public void TwoRecordsPresent()
+       [TestMethod]
+       public void DeleteMethodOK()
         {
-            //creating an instnc of the collection class
-            clsEmployeeCollection AllEmployee = new clsEmployeeCollection();
-            //test to see that the two values are the same
-            Assert.AreEqual(AllEmployee.Count, 2);
+            //CREATE AN INSTANCE 
+            clsEmployeeCollection AllEmployees = new clsEmployeeCollection();
+            clsEmployee TestItem = new clsEmployee();
+            //var to store pk
+            Int32 PK = 0;
+            //set the props
+            TestItem.EmployeeNo = 1;
+            TestItem.EmployeeFirstName = "Crack";
+            TestItem.EmployeeSurName = "Head";
+            TestItem.EmployeeContactNo = "07163829181";
+            TestItem.EmployeeEmail = "CrackBox@gmail.com";
+            //set thisEmployee to the test data
+            AllEmployees.ThisEmployee = TestItem;
+            //set the pk of the test data
+            TestItem.EmployeeNo = PK;
+            //find the record
+            AllEmployees.ThisEmployee.Find(PK);
+            //deleate record
+            AllEmployees.Delete();
+            //now find the record
+            Boolean Found = AllEmployees.ThisEmployee.Find(PK);
+            //TEST TO SEE THAT THE RECORD WAS NOT OUND
+            Assert.IsFalse(Found);
 
         }
-
 
     }
 
