@@ -47,6 +47,14 @@ namespace MyClassLibrary
         //constuctuer fr the class
         public clsEmployeeCollection()
         {
+
+            //var to store the index
+            
+
+
+
+
+
             clsEmployee TestItem = new clsEmployee();
             //seting the prameters
             TestItem.EmployeeNo = 6;
