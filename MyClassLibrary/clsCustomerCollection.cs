@@ -7,7 +7,8 @@ namespace MyClassLibrary
     {
         //private data member for the list 
         List<clsCustomer> mCustomerList = new List<clsCustomer>();
-        //public property for the customer list 
+        //private data member thisCustomer
+        clsCustomer mThisCustomer = new clsCustomer();
         public List<clsCustomer> CustomerList
         {
             get
@@ -34,6 +35,70 @@ namespace MyClassLibrary
                 //we shall worry about this later 
             }
         }
+
+        //public property for ThisCustomer
+        public clsCustomer ThisCustomer
+        {
+            get
+            {
+                //return the private data
+                return mThisCustomer;
+            }
+            set
+            {
+                //set the private data
+                mThisCustomer = value;
+            }
+        }
+        public int Add()
+        {
+            //add a new record to the databased based on the values of mThisCustomer
+            //connect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure 
+            DB.AddParameter("@HouseNo", mThisCustomer.HouseNo);
+            DB.AddParameter("@Street", mThisCustomer.Street);
+            DB.AddParameter("@PostCode", mThisCustomer.PostCode);
+            DB.AddParameter("@FirstName", mThisCustomer.FirstName);
+            DB.AddParameter("@SurName", mThisCustomer.SurName);
+            DB.AddParameter("@CountyNo", mThisCustomer.CountyNo);
+            DB.AddParameter("@PhoneNo", mThisCustomer.PhoneNo);
+            DB.AddParameter("@Active", mThisCustomer.Active);
+            DB.AddParameter("@Email", mThisCustomer.Email);
+            //execute the query returning the primary key value 
+            return DB.Execute("sproc_tblCustomer_Insert");
+        }
+
+        public void Delete()
+        {
+            //deletes the record pointed to by thisCustomer
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@CustomerID", mThisCustomer.CustomerID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblCustomer_Delete");
+        }
+
+        public void Update()
+        {
+            //update an existing record based on the values of thisCustomer
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@HouseNo", mThisCustomer.HouseNo);
+            DB.AddParameter("@Street", mThisCustomer.Street);
+            DB.AddParameter("@PostCode", mThisCustomer.PostCode);
+            DB.AddParameter("@FirstName", mThisCustomer.FirstName);
+            DB.AddParameter("@SurName", mThisCustomer.SurName);
+            DB.AddParameter("@CountyNo", mThisCustomer.CountyNo);
+            DB.AddParameter("@PhoneNo", mThisCustomer.PhoneNo);
+            DB.AddParameter("@Active", mThisCustomer.Active);
+            DB.AddParameter("@Email", mThisCustomer.Email);
+            //execute the stored procedure
+            DB.Execute("sproc_tblCustomer_Update");
+        }
+
         //constructor for the class
         public clsCustomerCollection()
            
@@ -70,6 +135,5 @@ namespace MyClassLibrary
                     Index++;
                 }
             }
-        public clsCustomer ThisCustomer { get; set; }
     }
 }
