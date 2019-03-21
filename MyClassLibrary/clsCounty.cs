@@ -15,7 +15,7 @@ namespace MyClassLibrary
 
         public bool Find(int CountyNo)
         {
-            //create an instance of the data connection 
+            //create an instance of the data connections
             clsDataConnection DB = new clsDataConnection();
             //add the parameter for the customer id to search for 
             DB.AddParameter("@CountyNo", CountyNo);

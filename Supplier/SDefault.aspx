@@ -20,8 +20,8 @@
             <!--this line of code is to create button.-->
             <asp:Button ID="btnSearch" runat="server" style="z-index: 1; left: 575px; top: 155px; position: absolute; height: 30px;" Text="Search" OnClick="btnSearch_Click" />      
             <asp:Button ID="btnClear" runat="server" style="z-index: 1; left: 644px; top: 155px; position: absolute; height: 30px; bottom: 369px; width: 61px;" Text="Clear" />
-            <asp:Button ID="btnAddSupplier" runat="server" style="z-index: 1; left: 440px; top: 218px; position: absolute; width: 118px" Text="Add Supplier" OnClick="btnAddSupplier_Click" />
-            <asp:Button ID="btnEditSupplier" runat="server" style="z-index: 1; left: 442px; top: 265px; position: absolute; width: 118px" Text="Edit Supplier"  />
+            <asp:Button ID="btnAddSupplier" runat="server" style="z-index: 1; left: 440px; top: 218px; position: absolute; width: 118px" Text="Add Supplier"  />
+            <asp:Button ID="btnUpdateSupplier" runat="server" style="z-index: 1; left: 442px; top: 265px; position: absolute; width: 118px" Text="Update Supplier" OnClick="btnUpdateSupplier_Click"   />
             <asp:Button ID="btnDeleteSupplier" runat="server" style="z-index: 1; left: 442px; top: 314px; position: absolute; width: 118px" Text="Delete Supplier" />
             <!--this line of code is to create Lablel.-->
             <asp:Label ID="lblError" runat="server" ForeColor="Red" style="z-index: 1; left: 178px; top: 422px; position: absolute"></asp:Label>

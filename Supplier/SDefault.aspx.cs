@@ -113,4 +113,27 @@ public partial class SDefault : System.Web.UI.Page
         //DisplaySuppliers("");
         //string txtSearch;
     }
+
+    protected void btnUpdateSupplier_Click(object sender, EventArgs e)
+    {
+        //var to store the primary key value of the recod to be edited
+        Int32 Supplier_Id;
+        //if a record has been selected from the list
+        if (lstSuppliers.SelectedIndex !=-1)
+        {
+            //get the primary key value of the record to edit
+            Supplier_Id = Convert.ToInt32(lstSuppliers.SelectedIndex);
+            //store the data in the session object
+            Session["Supplier_Id"] = Supplier_Id;
+            //redirect to the update page
+            Response.Redirect("AddSupplier.aspx?Supplier_Id=" + Supplier_Id);
+        }
+        else
+        {
+            //display an error
+            lblError.Text = "Please select a record to delete from the list"
+        }
+        //this line of code re-direct to the main page 
+        Response.Redirect("AddSupplier.aspx");
+    }
 }
