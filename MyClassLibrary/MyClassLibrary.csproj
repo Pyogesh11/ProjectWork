@@ -41,8 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsAlphaGame.cs" />
-    <Compile Include="clsCounty.cs" />
-    <Compile Include="clsCountyCollection.cs" />
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsCustomerCollection.cs" />
     <Compile Include="clsDataConnection.cs" />
