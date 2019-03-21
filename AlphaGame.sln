@@ -77,6 +77,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Customer", "Customer\", "{3F61F50B-E483-400B-B2F7-B35F8E47AFA6}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{af0fe6f4-b4d2-46d4-855f-b8ddf2b418d9}|MyClassLibrary.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_1340"
 		Debug.AspNetCompiler.PhysicalPath = "Customer\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1340\"
@@ -92,6 +93,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Customer", "Customer\", "{3
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "1340"
+		SlnRelativePath = "Customer\"
 	EndProjectSection
 EndProject
 Global
