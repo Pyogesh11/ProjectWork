@@ -121,16 +121,43 @@ namespace MyClassLibrary
             DB.AddParameter("Game_Name", mThisgame.Game_Name);
             DB.AddParameter("@Game_Description", mThisgame.Game_Description);
             DB.AddParameter("@Game_Quantity", mThisgame.Game_Quantity);
-            DB.AddParameter("@Game_Name", mThisgame.Platform);
-            DB.AddParameter("@Game_Name", mThisgame.Supplier_ID);
+            DB.AddParameter("@Platform", mThisgame.Platform);
+            DB.AddParameter("@Supplier_ID", mThisgame.Supplier_ID);
             //execute the query returning the primary key value 
             return DB.Execute("sproc_tblGames_Insert");
+        }
+        public void Delete()
+        {
+            //eletes the recods pointed to by this address 
+            //connect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //se the parameters for the tored procdure 
+            DB.AddParameter("@Game_ID", mThisgame.Game_ID);
+            //execute the stored procedure 
+            DB.Execute("sproc_tblGames_Delete");
+        }
+        public void Update()
+        {
+            //update an existing record based on the values of this addres 
+            //connect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stord procedure
+            DB.AddParameter("Game_ID", mThisgame.Game_ID);
+            DB.AddParameter("Game_Name", mThisgame.Game_Name);
+            DB.AddParameter("@Game_Description", mThisgame.Game_Description);
+            DB.AddParameter("@Game_Quantity", mThisgame.Game_Quantity);
+            DB.AddParameter("@Platform", mThisgame.Platform);
+            DB.AddParameter("@Supplier_ID", mThisgame.Supplier_ID);
+            //execute the query returning the primary key value 
+            DB.Execute("sproc_tblGames_Update");
+
+        }
             
 
 
 
 
-        }
+        
 
 
 

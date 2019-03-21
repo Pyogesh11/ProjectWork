@@ -9,15 +9,16 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 183px; top: 374px; position: absolute"></asp:Label>
         </div>
         <p>
             &nbsp;</p>
         <p>
-        <asp:Button ID="btnGame_ID" runat="server" Text="Game_ID" Height="36px" />
+        <asp:Button ID="btnGame_ID" runat="server" Text="Game_ID" Height="36px" OnClick="btnGame_ID_Click" />
         </p>
         <p>
         <asp:Button ID="btnGame_Name" runat="server" Text="Game_Name" />
-            <asp:TextBox ID="txtGame_ID" runat="server" style="z-index: 1; left: 292px; top: 95px; position: absolute"></asp:TextBox>
+            <asp:TextBox ID="txtGame_ID" runat="server" style="z-index: 1; left: 292px; top: 95px; position: absolute" OnTextChanged="txtGame_ID_TextChanged"></asp:TextBox>
             <asp:TextBox ID="txtGame_Name" runat="server" style="z-index: 1; left: 294px; top: 144px; position: absolute"></asp:TextBox>
             <asp:TextBox ID="txtGame_Quantity" runat="server" style="z-index: 1; left: 292px; top: 237px; position: absolute"></asp:TextBox>
             <asp:TextBox ID="txtSupplier_ID" runat="server" style="z-index: 1; left: 296px; top: 329px; position: absolute"></asp:TextBox>
