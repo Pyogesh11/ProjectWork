@@ -105,7 +105,7 @@ namespace MyClassLibrary
 
             }
 
-
+            
 
 
 
@@ -134,6 +134,22 @@ namespace MyClassLibrary
             DB.AddParameter("@EmployeeNo", mThisEmployee.EmployeeNo);
             //EXERCUTE THE STORED PROCEDUER
             DB.Execute("sproc_tblEmployess_Delete");
+        }
+
+        public void Update()
+        {
+            //update an existing record based on the values of thisemployee
+            //connect tpo the databse
+            clsDataConnection DB = new clsDataConnection();
+            //set the param fro the proceduer
+            DB.AddParameter("@EmployeeNo", mThisEmployee.EmployeeNo);
+            DB.AddParameter("@EmployeeFirstName", mThisEmployee.EmployeeFirstName);
+            DB.AddParameter("@EmployeeSurName", mThisEmployee.EmployeeSurName);
+            DB.AddParameter("@EmployeeContactNo", mThisEmployee.EmployeeContactNo);
+            DB.AddParameter("@EmployeeEmail", mThisEmployee.EmployeeEmail);
+            //exercute the stored proceduer
+            DB.Execute("sproc_tblEmployees_Update");
+
         }
     }
 }
