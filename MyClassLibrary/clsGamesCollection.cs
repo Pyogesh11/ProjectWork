@@ -5,7 +5,12 @@ namespace MyClassLibrary
 {
     public class clsGamesCollection
     {
+
         List<clsGames> mGamesList = new List<clsGames>();
+        //private data member thisgame
+        clsGames mThisgame = new clsGames();
+        //public property or ThisAdress
+       
 
         public List<clsGames> Gameslist
         {
@@ -83,9 +88,76 @@ namespace MyClassLibrary
                 //create a blank address 
                 clsGames AGame = new clsGames();
                 //read in the fields from the current record
+                AGame.Game_Name = Convert.ToString(DB.DataTable.Rows[Index]["Game_Name"]);
+                AGame.Game_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Game_ID"]);
+                AGame.Game_Description = Convert.ToString(DB.DataTable.Rows[Index]["Game_Description"]);
+                AGame.Game_Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Game_Quantity"]);
+                AGame.Platform = Convert.ToString(DB.DataTable.Rows[Index]["Platform"]);
+                AGame.Supplier_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Supplier_ID"]);
+
+
 
             }
         }
+        public clsGames ThisGame
+        {
+            get
+            {
+                //return the private data
+                return mThisgame;
+            }
+            set
+            {
+                //set the private data 
+                mThisgame = value;
+            }
+        }
+        public int Add()
+        {
+            //ads a new record to the database based on the values of ThisGame
+            //connect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("Game_Name", mThisgame.Game_Name);
+            DB.AddParameter("@Game_Description", mThisgame.Game_Description);
+            DB.AddParameter("@Game_Quantity", mThisgame.Game_Quantity);
+            DB.AddParameter("@Platform", mThisgame.Platform);
+            DB.AddParameter("@Supplier_ID", mThisgame.Supplier_ID);
+            //execute the query returning the primary key value 
+            return DB.Execute("sproc_tblGames_Insert");
+        }
+        public void Delete()
+        {
+            //eletes the recods pointed to by this address 
+            //connect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //se the parameters for the tored procdure 
+            DB.AddParameter("@Game_ID", mThisgame.Game_ID);
+            //execute the stored procedure 
+            DB.Execute("sproc_tblGames_Delete");
+        }
+        public void Update()
+        {
+            //update an existing record based on the values of this addres 
+            //connect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stord procedure
+            DB.AddParameter("Game_ID", mThisgame.Game_ID);
+            DB.AddParameter("Game_Name", mThisgame.Game_Name);
+            DB.AddParameter("@Game_Description", mThisgame.Game_Description);
+            DB.AddParameter("@Game_Quantity", mThisgame.Game_Quantity);
+            DB.AddParameter("@Platform", mThisgame.Platform);
+            DB.AddParameter("@Supplier_ID", mThisgame.Supplier_ID);
+            //execute the query returning the primary key value 
+            DB.Execute("sproc_tblGames_Update");
+
+        }
+            
+
+
+
+
+        
 
 
 
@@ -94,6 +166,6 @@ namespace MyClassLibrary
 
 
 
-        public clsGames ThisGame { get; set; }
+        
     }
 }
