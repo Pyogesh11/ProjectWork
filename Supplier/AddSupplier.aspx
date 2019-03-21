@@ -12,7 +12,7 @@
              <!--this line of code is for border line.-->
             <asp:Panel ID="Panel1" runat="server" BorderStyle="Solid" style="z-index: 1; left: 10px; top: 15px; position: absolute; height: 554px; width: 882px"> 
             <!--this line of code is to create button.-->
-            <asp:Button ID="btnHome" runat="server" style="z-index: 1; left: 231px; top: 90px; position: absolute; width: 110px" Text="Home" OnClick="btnHome_Click1" />
+            <asp:Button ID="btnHome" runat="server" style="z-index: 1; left: 231px; top: 90px; position: absolute; width: 110px" Text="Home" />
             <asp:Label ID="lblSupplier" runat="server" style="z-index: 1; left: 5px; top: 530px; position: absolute; width: 111px" Text="Supplier Page"></asp:Label>
             <!--this line of code is to create text box.-->
             <asp:TextBox ID="txtSupplier_Id" runat="server" style="z-index: 1; left: 245px; top: 189px; position: absolute"></asp:TextBox>

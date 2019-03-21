@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="clsConsoleCollection.cs" />
     <Compile Include="tstConsoleCollection.cs" />
+    <Compile Include="tstCounty.cs" />
+    <Compile Include="tstCountyCollection.cs" />
     <Compile Include="tstEmployeeCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstConsole.cs" />

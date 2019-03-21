@@ -13,12 +13,27 @@ public partial class AddSupplier : System.Web.UI.Page
 
     //evennt handler for the page load event
     protected void Page_Load(object sender, EventArgs e)
-            {
+    {
+        {
+            DisplayCounties();
+        }
+    }
 
-                
-            }
+    //function for populating the county drop down list 
+    void DisplayCounties()
+    {
+        //create an instance of the Customer Collection
+        MyClassLibrary.clsCountyCollection Counties = new MyClassLibrary.clsCountyCollection();
+        //set the data source to the list of Customers in the collection
+        ddlCounty.DataSource = Counties.AllCounties;
+        //set the name of the primary key
+        ddlCounty.DataValueField = "CountyNo";
+        //set the data field to display
+        ddlCounty.DataTextField = "County";
+        //bind the data to the list
+        ddlCounty.DataBind();
+    }
 
-       
 
     void DisplaySupplier()
     {
