@@ -129,10 +129,15 @@ namespace MyTesting
             TestItem.EmployeeSurName = "Head";
             TestItem.EmployeeContactNo = "07163829181";
             TestItem.EmployeeEmail = "CrackBox@gmail.com";
-            //set thisEmployee to the test data
+
             AllEmployees.ThisEmployee = TestItem;
             //set the pk of the test data
+            //set thisEmployee to the test data
+            PK = AllEmployees.Add();
+            //set the pk of the test data
             TestItem.EmployeeNo = PK;
+            
+            
             //find the record
             AllEmployees.ThisEmployee.Find(PK);
             //deleate record
@@ -143,6 +148,47 @@ namespace MyTesting
             Assert.IsFalse(Found);
 
         }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //CREATE AN INSTANCE OF THE CLASS 
+            clsEmployeeCollection AllEmployees = new clsEmployeeCollection();
+            //craete the ite test data
+            clsEmployee TestItem = new clsEmployee();
+            //var to store pk
+            Int32 PK = 0;
+            //SET PROPS
+            TestItem.EmployeeNo = 1;
+            TestItem.EmployeeFirstName = "Maru";
+            TestItem.EmployeeSurName = "Wana";
+            TestItem.EmployeeContactNo = "07163829253";
+            TestItem.EmployeeEmail = "Maru@gmail.com";
+            //set the emplyee to the test data
+            AllEmployees.ThisEmployee = TestItem;
+            //add the record
+            PK = AllEmployees.Add();
+            //SET THE PK OF THE TEST DATA
+            TestItem.EmployeeNo = PK;
+            //MOD THE TEST CODE
+            TestItem.EmployeeNo = 1;
+            TestItem.EmployeeFirstName = "Wak";
+            TestItem.EmployeeSurName = "Anda";
+            TestItem.EmployeeContactNo = "07163829253";
+            TestItem.EmployeeEmail = "Maru@gmail.com";
+            //set the record based on the new test data
+            AllEmployees.ThisEmployee = TestItem;
+            //update the record
+            AllEmployees.Update();
+            AllEmployees.ThisEmployee.Find(PK);
+            //TEST TO SEE THIS EMPLOYEE MATCHES THE TEST DATA
+            Assert.AreEqual(AllEmployees.ThisEmployee, TestItem);
+
+            
+        }
+
+
+
 
     }
 

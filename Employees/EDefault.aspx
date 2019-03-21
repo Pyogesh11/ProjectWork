@@ -14,7 +14,12 @@
         <asp:Panel ID="Panel1" runat="server" BorderStyle="Solid" style="z-index: 1; left: 10px; top: 15px; position: absolute; height: 554px; width: 882px">
 
              <!--this line of code is to create List Box.-->
-            <asp:ListBox ID="lstEDEmployees" runat="server" style="z-index: 1; left: 176px; top: 190px; position: absolute; width: 249px; height: 216px;"></asp:ListBox>
+         
+           <asp:ListBox ID="lstEmp" runat="server" style ="z-index: 1; left:176px; top: 190px; position: absolute; width 249px; height: 216px; width: 201px;" ></asp:ListBox> 
+
+
+
+
             <!--this line of code is to create text box.-->
             <asp:TextBox ID="txtEDSearch" runat="server" style="z-index: 1; left: 177px; top: 155px; position: absolute; margin-bottom: 0px; width: 376px; height: 24px;" Text="Search Employee"></asp:TextBox>
             <!--this line of code is to create button.-->
@@ -33,7 +38,7 @@
            
             <asp:Button ID="btnEDDisplay" runat="server" style="z-index: 1; left: 442px; top: 362px; position: absolute; width: 118px; height: 26px" Text="Display All" />
             <!--this line of code is to create label.-->
-            <asp:Label ID="lblEmployee" runat="server" style="z-index: 1; left: 5px; top: 530px; position: absolute; width: 111px" Text="Supplier Page"></asp:Label>
+          
 
             <br />
             <!--this line of code is to create header.-->
