@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using MyClassLibrary;
 
 namespace MyClassLibrary
 {
@@ -10,10 +12,10 @@ namespace MyClassLibrary
         private Int32 mConsolePrice;
         private Int32 mConsoleNo;
         private string mConsoleName;
-       
-        
 
-        
+
+
+
         public string Console
         {
             get
@@ -104,14 +106,14 @@ namespace MyClassLibrary
             {
                 return false;
             }
-           
+
         }
 
         public string Valid(string ConsoleName, string ConsolePrice, string ConsoleStock, string ConsoleManufacturer)
         {
             String Error = "";
 
-            if(ConsoleName.Length == 0)
+            if (ConsoleName.Length == 0)
             {
                 Error = Error + "This must not be blank";
             }
@@ -145,5 +147,8 @@ namespace MyClassLibrary
             }
             return Error;
         }
+
+
     }
 }
+

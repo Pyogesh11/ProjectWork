@@ -185,7 +185,7 @@ namespace MyClassLibrary
                 //record the error
                 Error = Error + "This field can not have more than 100 characters ";
             }
-            if (Supplier_ID.Length == 0) ;
+            if (Supplier_ID.Length == 0) 
             {
                 //record the error 
                 Error = Error + "This field can not be blank";

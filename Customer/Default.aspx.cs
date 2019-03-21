@@ -7,17 +7,16 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
-    //variable to store the primary key with page level scope 
-    Int32 CustomerID;
-    //event handler for the page load event 
+    //this function handles the load event for the page 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //get the number of the customer to be processed 
-        CustomerID = Convert.ToInt32(Session["CustomerID"]);
+
+        //if this is the first time the page is displayed
         if (IsPostBack == false)
         {
-            //populate the list of customers
+            //update the list box
             DisplayCustomers();
+
         }
     }
 
@@ -85,5 +84,10 @@ public partial class _Default : System.Web.UI.Page
             //display an error 
             lblError.Text = "Please select a record to delete from the list";
         }
+    }
+
+    protected void btnDisplayAll_Click(object sender, EventArgs e)
+    {
+
     }
 }

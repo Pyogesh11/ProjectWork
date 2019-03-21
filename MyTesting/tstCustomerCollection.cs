@@ -153,7 +153,7 @@ namespace MyTesting
             TestItem.HouseNo = "4";
             TestItem.PostCode = "LE3 72C";
             TestItem.Street = "charles street";
-            TestItem.FirstName = "mila";
+            TestItem.FirstName = "Mila";
             TestItem.SurName = "Nod";
             TestItem.PhoneNo = 122222784;
             TestItem.Email = "Mila76e3897@outlook.com";
@@ -162,16 +162,18 @@ namespace MyTesting
             //add the record 
             PrimaryKey = AllCustomer.Add();
             //set the primary key of the test data 
+            TestItem.CustomerID = PrimaryKey;
+            //modify the test data
             TestItem.Active = false;
-            TestItem.CustomerID = 10;
-            TestItem.CountyNo = 10;
-            TestItem.HouseNo = "45";
-            TestItem.PostCode = "LE3 72D";
-            TestItem.Street = "Bla street";
-            TestItem.FirstName = "Sila";
-            TestItem.SurName = "Pla";
-            TestItem.PhoneNo = 122772784;
-            TestItem.Email = "Ytergfg@outlook.com";
+            TestItem.CustomerID = 4;
+            TestItem.CountyNo = 5;
+            TestItem.HouseNo = "4";
+            TestItem.PostCode = "LE4 71D";
+            TestItem.Street = "Priti Street";
+            TestItem.FirstName = "Tila";
+            TestItem.SurName = "Pat";
+            TestItem.PhoneNo = 100485785;
+            TestItem.Email = "Tilagskjhd@outlook.com";
             //set the record based on the new test data 
             AllCustomer.ThisCustomer = TestItem;
             //update the record 
@@ -181,6 +183,73 @@ namespace MyTesting
             //test to see ThisCustomer Matches the test data 
             Assert.AreEqual(AllCustomer.ThisCustomer, TestItem);
         }
-        
+
+        [TestMethod]
+        public void ReportByPostCodeMethodOK()
+        {
+            //create an instance of the filtered data
+            clsCustomerCollection AllCustomers = new clsCustomerCollection();
+            //create an instace of the filtered data 
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            //apply a blank string (should return all records);
+            FilteredCustomers.ReportByPostCode("");
+            //test to see that two values are the same 
+            Assert.AreEqual(AllCustomers.Count, FilteredCustomers.Count);
+        }
+
+
+
+        public void ReportByPostCode(string PostCode)
+        {
+            //filters the record based on a full or partial post code 
+            //connect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //send the PostCode parameter to the database 
+            DB.AddParameter("@PostCode", PostCode);
+            //execute the stored procedure 
+            DB.Execute("sproc_tblCustomer_FilterByPostCode");
+        }
+
+        [TestMethod]
+        public void ReportByPostCodeNoneFound()
+        {
+            //create an instance of the filtered data 
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            //apply a post code that doesn't exist
+            FilteredCustomers.ReportByPostCode("xxx xxx");
+            //test to see that there are no records 
+            Assert.AreEqual(0, FilteredCustomers.Count);
+        }
+        [TestMethod]
+        public void ReportByMethodTestDataFound()
+        {
+            //create an instance of the filtered data 
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            //var to store outcome 
+            Boolean OK = false;
+            //apply a post code that doesn't exist 
+            FilteredCustomers.ReportByPostCode("yyy yyy");
+            //check that the correct number of records are found 
+            if (FilteredCustomers.Count == 2)
+            {
+                //check that the first record is ID 12
+                if (FilteredCustomers.CustomerList[0].CustomerID != 12)
+                {
+                    OK = false;
+                }
+                //check that the first record is ID 13
+                if (FilteredCustomers.CustomerList[1].CustomerID != 13)
+                {
+                    OK = false;
+                }
+                else
+                {
+                    OK = false;
+                }
+                //test to see that there are no records 
+                Assert.IsFalse(OK);
+            }
+        }
     }
+
 }

@@ -68,14 +68,16 @@
         }
         .auto-style11 {
             position: absolute;
-            top: 309px;
-            left: 19px;
+            top: 308px;
+            left: 22px;
             z-index: 1;
+            width: 78px;
+            right: 944px;
         }
         .auto-style12 {
             position: absolute;
-            top: 307px;
-            left: 126px;
+            top: 306px;
+            left: 118px;
             z-index: 1;
         }
         .auto-style13 {
@@ -145,8 +147,8 @@
         <asp:TextBox ID="txtHouseNo" runat="server" CssClass="auto-style8"></asp:TextBox>
         <asp:Label ID="lblPostCode" runat="server" CssClass="auto-style9" Text="PostCode"></asp:Label>
         <asp:TextBox ID="txtPostCode" runat="server" CssClass="auto-style10"></asp:TextBox>
-        <asp:Label ID="lblCountyNo" runat="server" CssClass="auto-style11" Text="CountyNo"></asp:Label>
-        <asp:DropDownList ID="ddlCountyNo" runat="server" CssClass="auto-style12">
+        <asp:Label ID="lblCounty" runat="server" CssClass="auto-style11" Text="County"></asp:Label>
+        <asp:DropDownList ID="ddlCounty" runat="server" CssClass="auto-style12" OnSelectedIndexChanged="ddlCounty_SelectedIndexChanged">
         </asp:DropDownList>
         <asp:Label ID="lblPhoneNo" runat="server" CssClass="auto-style13" Text="PhoneNo"></asp:Label>
         <asp:TextBox ID="txtPhoneNo" runat="server" CssClass="auto-style14"></asp:TextBox>
