@@ -4,132 +4,140 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>GameConsoles</title>
     <style type="text/css">
+        body
+        {
+            background-image: url("101345-simple_background-gradient-748x421.jpg");
+            background-repeat: repeat-x;
+        }
         .auto-style1 {
             position: absolute;
-            top: 56px;
+            top: 24px;
             left: 10px;
             z-index: 1;
         }
         .auto-style2 {
             position: absolute;
-            top: 57px;
-            left: 119px;
+            top: 24px;
+            left: 112px;
             z-index: 1;
         }
         .auto-style3 {
             position: absolute;
-            top: 105px;
-            left: 11px;
+            top: 58px;
+            left: 8px;
             z-index: 1;
         }
         .auto-style4 {
             position: absolute;
-            top: 105px;
-            left: 116px;
+            top: 58px;
+            left: 114px;
             z-index: 1;
         }
         .auto-style5 {
             position: absolute;
-            top: 159px;
-            left: 20px;
+            top: 99px;
+            left: 16px;
             z-index: 1;
         }
         .auto-style6 {
             position: absolute;
-            top: 160px;
-            left: 116px;
+            top: 95px;
+            left: 114px;
             z-index: 1;
         }
         .auto-style7 {
             position: absolute;
-            top: 209px;
-            left: 23px;
+            top: 137px;
+            left: 14px;
             z-index: 1;
         }
         .auto-style8 {
             position: absolute;
-            top: 207px;
-            left: 116px;
+            top: 135px;
+            left: 115px;
             z-index: 1;
         }
         .auto-style9 {
             position: absolute;
-            top: 260px;
-            left: 23px;
+            top: 176px;
+            left: 15px;
             z-index: 1;
         }
         .auto-style10 {
             position: absolute;
-            top: 257px;
-            left: 117px;
+            top: 173px;
+            left: 111px;
             z-index: 1;
         }
         .auto-style11 {
             position: absolute;
-            top: 308px;
-            left: 22px;
+            top: 214px;
+            left: 11px;
             z-index: 1;
             width: 78px;
-            right: 944px;
+            right: 803px;
         }
         .auto-style12 {
             position: absolute;
-            top: 306px;
-            left: 118px;
+            top: 213px;
+            left: 116px;
             z-index: 1;
         }
         .auto-style13 {
             position: absolute;
-            top: 354px;
-            left: 22px;
+            top: 253px;
+            left: 18px;
             z-index: 1;
         }
         .auto-style14 {
             position: absolute;
-            top: 350px;
-            left: 110px;
+            top: 249px;
+            left: 105px;
             z-index: 1;
         }
         .auto-style15 {
             position: absolute;
-            top: 395px;
-            left: 28px;
+            top: 289px;
+            left: 20px;
             z-index: 1;
         }
         .auto-style16 {
             position: absolute;
-            top: 393px;
-            left: 111px;
+            top: 289px;
+            left: 108px;
             z-index: 1;
         }
         .auto-style17 {
             position: absolute;
-            top: 450px;
-            left: 32px;
+            top: 323px;
+            left: 15px;
             z-index: 1;
             width: 91px;
         }
         .auto-style18 {
             position: absolute;
-            top: 447px;
-            left: 166px;
+            top: 395px;
+            left: 294px;
             z-index: 1;
         }
         .auto-style19 {
             position: absolute;
-            top: 499px;
-            left: 18px;
+            top: 369px;
+            left: 16px;
             z-index: 1;
-            width: 54px;
-            height: 26px;
+            width: 90px;
+            height: 31px;
+            right: 786px;
         }
         .auto-style20 {
             position: absolute;
-            top: 498px;
-            left: 104px;
+            top: 367px;
+            left: 122px;
             z-index: 1;
+            width: 90px;
+            height: 31px;
         }
     </style>
 </head>
@@ -138,26 +146,26 @@
         <div>
         &nbsp;</div>
         <asp:Label ID="lblFirstName" runat="server" CssClass="auto-style1" Text="FirstName "></asp:Label>
-        <asp:TextBox ID="txtFirstName" runat="server" CssClass="auto-style2"></asp:TextBox>
+        <asp:TextBox ID="txtFirstName" runat="server" CssClass="auto-style2" BorderColor="Black"></asp:TextBox>
         <asp:Label ID="lblSurName" runat="server" CssClass="auto-style3" Text="SurName"></asp:Label>
-        <asp:TextBox ID="txtSurName" runat="server" CssClass="auto-style4"></asp:TextBox>
+        <asp:TextBox ID="txtSurName" runat="server" CssClass="auto-style4" BorderColor="Black"></asp:TextBox>
         <asp:Label ID="lblStreet" runat="server" CssClass="auto-style5" Text="Street"></asp:Label>
-        <asp:TextBox ID="txtStreet" runat="server" CssClass="auto-style6"></asp:TextBox>
+        <asp:TextBox ID="txtStreet" runat="server" CssClass="auto-style6" BorderColor="Black"></asp:TextBox>
         <asp:Label ID="lblHouseNo" runat="server" CssClass="auto-style7" Text="HouseNo"></asp:Label>
-        <asp:TextBox ID="txtHouseNo" runat="server" CssClass="auto-style8"></asp:TextBox>
+        <asp:TextBox ID="txtHouseNo" runat="server" CssClass="auto-style8" BorderColor="Black"></asp:TextBox>
         <asp:Label ID="lblPostCode" runat="server" CssClass="auto-style9" Text="PostCode"></asp:Label>
-        <asp:TextBox ID="txtPostCode" runat="server" CssClass="auto-style10"></asp:TextBox>
+        <asp:TextBox ID="txtPostCode" runat="server" CssClass="auto-style10" BorderColor="Black"></asp:TextBox>
         <asp:Label ID="lblCounty" runat="server" CssClass="auto-style11" Text="County"></asp:Label>
         <asp:DropDownList ID="ddlCounty" runat="server" CssClass="auto-style12" OnSelectedIndexChanged="ddlCounty_SelectedIndexChanged">
         </asp:DropDownList>
         <asp:Label ID="lblPhoneNo" runat="server" CssClass="auto-style13" Text="PhoneNo"></asp:Label>
-        <asp:TextBox ID="txtPhoneNo" runat="server" CssClass="auto-style14"></asp:TextBox>
+        <asp:TextBox ID="txtPhoneNo" runat="server" CssClass="auto-style14" BorderColor="Black"></asp:TextBox>
         <asp:Label ID="lblEmail" runat="server" CssClass="auto-style15" Text="Email"></asp:Label>
-        <asp:TextBox ID="txtEmail" runat="server" CssClass="auto-style16"></asp:TextBox>
+        <asp:TextBox ID="txtEmail" runat="server" CssClass="auto-style16" BorderColor="Black"></asp:TextBox>
         <asp:CheckBox ID="chkActive" runat="server" CssClass="auto-style17" />
         <asp:Label ID="lblError" runat="server" CssClass="auto-style18" Text="lblError"></asp:Label>
-        <asp:Button ID="btnOK" runat="server" CssClass="auto-style19" OnClick="btnOK_Click" Text="OK" />
-        <asp:Button ID="btnCancel" runat="server" CssClass="auto-style20" Text="Cancel" />
+        <asp:Button ID="btnOK" runat="server" CssClass="auto-style19" OnClick="btnOK_Click" Text="OK" BackColor="#FFFFCC" BorderColor="Black" BorderStyle="Groove" />
+        <asp:Button ID="btnCancel" runat="server" CssClass="auto-style20" Text="Cancel" OnClick="btnCancel_Click" BackColor="#FFFFCC" BorderColor="Black" BorderStyle="Groove" />
     </form>
 </body>
 </html>

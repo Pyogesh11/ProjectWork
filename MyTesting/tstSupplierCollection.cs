@@ -44,18 +44,7 @@ namespace MyTesting
             Assert.AreEqual(AllSuppliers.SupplierList, TestList);
         }
 
-        [TestMethod]
-        public void CountPropertyOK()
-        {
-            //create an instance of the class we want to create
-            clsSupplierCollection AllSuppliers = new clsSupplierCollection();
-            //create some test data to assign to the property 
-            Int32 SomeCount = 3;
-            //assign the data to the property
-            AllSuppliers.Count = SomeCount;
-            //test to see that the two values are the same
-            Assert.AreEqual(AllSuppliers.Count, SomeCount);
-        }
+        
 
         [TestMethod]
         public void ThisSupplierPropertyOK()
@@ -80,14 +69,6 @@ namespace MyTesting
         }
 
 
-        [TestMethod]
-        public void TwoRecordsPresent()
-        {
-            //create an instance of the class we want to create
-            clsSupplierCollection AllSuppliers = new clsSupplierCollection();
-            //test to see that the two values are the same
-            Assert.AreEqual(AllSuppliers.Count, 3);
-        }
     }
 }
 

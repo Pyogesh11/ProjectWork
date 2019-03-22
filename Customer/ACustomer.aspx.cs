@@ -14,8 +14,19 @@ public partial class ACustomer : System.Web.UI.Page
     //event handler for the page load event 
     protected void Page_Load(object sender, EventArgs e)
     {
+        //get the number of the  customer to be processed 
+        CustomerID = Convert.ToInt32(Session["CustomerID"]);
+        //if this is the first time the page is load
+        if (IsPostBack == false)
         {
+            //populate the list of counties
             DisplayCounties();
+            //if we are not adding a new record
+            if (CustomerID != -1)
+            {
+                //display the current data for the record 
+                DisplayCustomer();
+            }
         }
     }
     //function for adding new records
@@ -85,15 +96,66 @@ public partial class ACustomer : System.Web.UI.Page
     //event handler for the ok button 
     protected void btnOK_Click(object sender, EventArgs e)
     {
-        if (CustomerID == -1)
+        //var to store any error messages
+        string ErrorMsg;
+        //create an instance of the customer class
+        clsCustomerCollection CustomerStore = new clsCustomerCollection();
+        //use the objects validation method to test the data
+        ErrorMsg = CustomerStore.ThisCustomer.Valid(txtFirstName.Text, txtSurName.Text, txtStreet.Text, txtHouseNo.Text, txtPostCode.Text, txtPhoneNo.Text);
+        //if there is no error message
+        if (ErrorMsg == "")
         {
-            //add the new record 
-            Add();
+            //if we are adding a new record
+            if (CustomerID == -1)
+            {
+                //set the first name property 
+                CustomerStore.ThisCustomer.FirstName = txtFirstName.Text;
+                //set the surname property 
+                CustomerStore.ThisCustomer.SurName = txtSurName.Text;
+                //set the street property
+                CustomerStore.ThisCustomer.Street = txtStreet.Text;
+                //set the house number property of the object
+                CustomerStore.ThisCustomer.HouseNo = txtHouseNo.Text;
+                //set the house no property 
+                CustomerStore.ThisCustomer.HouseNo = txtHouseNo.Text;
+                //set the post code property
+                CustomerStore.ThisCustomer.PostCode = txtPostCode.Text;
+                //set the county no
+                CustomerStore.ThisCustomer.CountyNo = Convert.ToInt32(ddlCounty.SelectedValue);
+                //set the active property
+                CustomerStore.ThisCustomer.Active = chkActive.Checked;
+                //invoke the add method
+                CustomerStore.Add();
+            }
+            else//this is an existing record to update
+            {
+                //find the record to be updated
+                //set the first name property 
+                CustomerStore.ThisCustomer.FirstName = txtFirstName.Text;
+                //set the surname property 
+                CustomerStore.ThisCustomer.SurName = txtSurName.Text;
+                //set the street property
+                CustomerStore.ThisCustomer.Street = txtStreet.Text;
+                //set the house number property of the object
+                CustomerStore.ThisCustomer.HouseNo = txtHouseNo.Text;
+                //set the house no property 
+                CustomerStore.ThisCustomer.HouseNo = txtHouseNo.Text;
+                //set the post code property
+                CustomerStore.ThisCustomer.PostCode = txtPostCode.Text;
+                //set the county no
+                CustomerStore.ThisCustomer.CountyNo = Convert.ToInt32(ddlCounty.SelectedValue);
+                //set the active property
+                CustomerStore.ThisCustomer.Active = chkActive.Checked;
+                //update the record with the new data
+                CustomerStore.Update();
+            }
+            //all done so redirect back to the main page
+            Response.Redirect("Default.aspx");
         }
-        else
+        else//there are errors
         {
-            //update the record 
-            Update();
+            //display the error message
+            lblError.Text = ErrorMsg;
         }
     }
     void DisplayCustomer()
@@ -129,5 +191,11 @@ public partial class ACustomer : System.Web.UI.Page
     protected void ddlCounty_SelectedIndexChanged(object sender, EventArgs e)
     {
      
+    }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        //redirect to the main page
+        Response.Redirect("Default.aspx");
     }
 }

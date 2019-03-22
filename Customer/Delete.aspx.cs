@@ -38,4 +38,10 @@ public partial class Delete : System.Web.UI.Page
         //delete the record
         CustomerStore.Delete();
     }
+
+    protected void btnNo_Click(object sender, EventArgs e)
+    {
+        //redirect back to the main page
+        Response.Redirect("Default.aspx");
+    }
 }

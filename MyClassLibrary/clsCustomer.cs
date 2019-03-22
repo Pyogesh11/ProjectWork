@@ -5,7 +5,6 @@ namespace MyClassLibrary
     public class clsCustomer
     {
         //private data member for the HouseNo property  
-        //public property for gender
         private Boolean mActive;
         private string mHouseNo;
         private Int32 mCustomerID;
