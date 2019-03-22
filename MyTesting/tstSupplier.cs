@@ -294,7 +294,7 @@ namespace MyTesting
             Int32 Supplier_Id = 004;
             //invoke the method 
             Found = ASupplier.Find(Supplier_Id);
-            //check the supplier id 
+            //check the supplier id //////////
             if (ASupplier.Active != true)
             {
                 OK = false;

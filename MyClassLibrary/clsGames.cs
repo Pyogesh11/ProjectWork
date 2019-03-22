@@ -116,9 +116,9 @@ namespace MyClassLibrary
             //reate an instace of the data connection 
             clsDataConnection DB = new clsDataConnection();
             //add the parameter for the game id to serach for 
-            DB.AddParameter("@Game_ID", Game_ID);
+            DB.AddParameter("@Game_ID", game_ID);
             //execture the stored procedure 
-            DB.Execute("sproc_tblGames_FiterByGame_ID");
+            DB.Execute("sproc_tblGames_FilterByGame_ID");
             //if one record is found (there shuld be either one or zero)
             if (DB.Count == 1)
             {
@@ -126,7 +126,7 @@ namespace MyClassLibrary
                 mGame_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Game_ID"]);
                 mSupplier_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Supplier_ID"]);
                 mGame_Name = Convert.ToString(DB.DataTable.Rows[0]["Game_Name"]);
-                mGame_description = Convert.ToString(DB.DataTable.Rows[0]["Game_description"]);
+                mGame_description = Convert.ToString(DB.DataTable.Rows[0]["Game_Description"]);
                 mGame_Quantity = Convert.ToInt32(DB.DataTable.Rows[0]["Game_Quantity"]);
                 mPlatform = Convert.ToString(DB.DataTable.Rows[0]["Platform"]);
 
@@ -144,43 +144,53 @@ namespace MyClassLibrary
         }
 
         
-        public string Valid(string Game_Name, string Game_Description, String Game_Quantity, string Platform, String Supplier_ID)
+        public string Valid(string game_Name, string game_Description, String game_Quantity, string platform, String supplier_ID)
         {
             //create a string varibale to store the error
             String Error = "";
             //if  the game_name is blank
-            if (this.Game_Name.Length == 0)
+            if (game_Name.Length == 0)
             {
                 //record the error
                 Error = Error + "This field cannot be left blank";
             }
+            if (game_Name.Length < 2)
+            {
+                //record the error 
+                Error = Error + "This field can not have less than 2 characters";
+            }
             //if the gane_Name is greater than 50 characters 
-            if (Game_Name.Length > 50)
+            if (game_Name.Length > 50)
             {
                 //record the error
                 Error = Error + "This field can not have more than 50 characters";
             }
-            if (Game_Description.Length == 0)
+            if (game_Description.Length == 0)
             {
                 //record the rror 
                 Error = Error + "This field cannot be blank";
             }
-            if (Game_Description.Length >100)
+            if (game_Description.Length >100)
             {
                 //record the error
                 Error = Error + "This field can not have more than 100 characters";
             }
-            if (Game_Quantity.Length >1000)
+            if (game_Description.Length < 5 )
+            {
+                //Reocord the error 
+                Error = Error + "This field can not have less than 5 characters";
+            }
+            if (game_Quantity.Length >1000)
             {
                 //record the eror 
                 Error = Error + "This field has too many characters";
             }
-            if (Platform.Length == 0 )
+            if (platform.Length == 0 )
             {
                 //record the rror 
                 Error = Error + "This field cannot be blank";
             }
-            if (Platform.Length > 100)
+            if (platform.Length > 100)
             {
                 //record the error
                 Error = Error + "This field can not have more than 100 characters ";
@@ -190,7 +200,7 @@ namespace MyClassLibrary
                 //record the error 
                 Error = Error + "This field can not be blank";
             }
-            if (Supplier_ID.Length > 200)
+            if (supplier_ID.Length > 200)
             {
                 //record the error 
                 Error = Error + "This field can not have more than 200 characters";

@@ -44,7 +44,19 @@ namespace MyTesting
             Assert.AreEqual(AllSuppliers.SupplierList, TestList);
         }
 
-        
+        [TestMethod]
+        public void CountPropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsSupplierCollection AllSuppliers = new clsSupplierCollection();
+            //create some test data to assign to the property 
+            Int32 SomeCount = 3;
+            //assign the data to the property
+            AllSuppliers.Count = SomeCount;
+            //test to see that the two values are the same
+            Assert.AreEqual(AllSuppliers.Count, SomeCount);
+        }
+
 
         [TestMethod]
         public void ThisSupplierPropertyOK()
@@ -69,6 +81,78 @@ namespace MyTesting
         }
 
 
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsSupplierCollection AllSuppliers = new clsSupplierCollection();
+            //create th item of the data
+            clsSupplier TestItem = new clsSupplier();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.Active = true;
+            TestItem.Supplier_Address = "Some Supplier Address ";
+            TestItem.CountyNo = 1;
+            TestItem.Supplier_Email = "abcd.e@gmail.com";
+            TestItem.Supplier_Id = 001;
+            TestItem.Supplier_Name = "Game.net";
+            TestItem.Supplier_Phone_No = "07331415589";
+            //set ThisSupplier to the test data
+            AllSuppliers.ThisSupplier = TestItem;
+            //add record
+            PrimaryKey = AllSuppliers.Add();
+            //set the primary key of the test data
+            TestItem.Supplier_Id = PrimaryKey;
+            //find the record
+            AllSuppliers.ThisSupplier.Find(PrimaryKey);
+            //Test to see that the two values are the same
+            Assert.AreEqual(AllSuppliers.ThisSupplier, TestItem);
+        }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsSupplierCollection AllSuppliers = new clsSupplierCollection();
+            //create th item of the data
+            clsSupplier TestItem = new clsSupplier();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.Active = true;
+            TestItem.Supplier_Address = "Some Supplier Address ";
+            TestItem.CountyNo = 1;
+            TestItem.Supplier_Email = "abcd.e@gmail.com";
+            TestItem.Supplier_Id = 001;
+            TestItem.Supplier_Name = "Game.net";
+            TestItem.Supplier_Phone_No = "07331415589";
+            //set ThisSupplier to the test data
+            AllSuppliers.ThisSupplier = TestItem;
+            //add record
+            PrimaryKey = AllSuppliers.Add();
+            //set the primary key of the test data
+            TestItem.Supplier_Id = PrimaryKey;
+            //find the record
+            AllSuppliers.ThisSupplier.Find(PrimaryKey);
+            //delete record
+            AllSuppliers.Delete();
+            //now find the record
+            Boolean Found = AllSuppliers.ThisSupplier.Find(PrimaryKey);
+            //test to see that the record was not found
+            Assert.IsFalse(Found);
+
+        }
+
+        [TestMethod]
+        public void TwoRecordsPresent()
+        {
+            //create an instance of the class we want to create
+            clsSupplierCollection AllSuppliers = new clsSupplierCollection();
+            //test to see that the two values are the same
+            Assert.AreEqual(AllSuppliers.Count, 3);
+        }
     }
 }
+
 
